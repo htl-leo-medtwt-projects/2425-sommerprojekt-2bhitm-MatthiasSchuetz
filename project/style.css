@@ -1,0 +1,79 @@
+/*Fonts
+-------
+*/
+
+@font-face {
+    font-family: "head";
+    src: url("./inhalt/Fonts/Headlines-BoldItalic.otf");
+}
+
+@font-face {
+    font-family: "text";
+    src: url("./inhalt/Fonts/OldNewspaperTypes.ttf");
+}
+
+/*Allgemein
+-----------
+*/
+
+body {
+    background: linear-gradient(294deg, #000 -5.56%, #100000 11.42%, #870303 138.13%, #4B0202 138.13%);
+}
+
+a {
+    text-decoration: none;
+}
+
+h1 {
+    font-family: head;
+    font-size: 64px;
+    background: radial-gradient(ellipse farthest-corner at right bottom, #FEDB37 0%, #FDB931 8%, #9f7928 30%, #8A6E2F 40%, transparent 80%),
+    radial-gradient(ellipse farthest-corner at left top, #FFFFFF 0%, #FFFFAC 8%, #D1B464 25%, #5d4a1f 62.5%, #5d4a1f 100%);
+    /*-webkit-text-fill-color: transparent;
+    background-clip: text;*/
+    width: 300px;
+    border-radius: 15px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    color: #540202;
+}
+
+
+
+/*Navigation
+------------
+*/
+
+#allgemein {
+    border-radius: 37px;
+    border: 1px solid #C89999;
+    background: linear-gradient(270deg, rgba(0, 0, 0, 0.89) 48.84%, rgba(119, 37, 37, 0.64) 104.14%);
+    box-shadow: 14px 14px 4px 0px rgba(82, 33, 33, 0.41);
+    display: grid;
+    grid-template-columns: auto auto;
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#allgemein>img {
+    width: 375px;
+    height: 258px;
+    position: relative;
+    right: -23%;
+}
+
+.ueberschrift {
+    font-family: head;
+    font-size: 64px;
+    background: radial-gradient(ellipse farthest-corner at right bottom, #FEDB37 0%, #FDB931 8%, #9f7928 30%, #8A6E2F 40%, transparent 80%),
+    radial-gradient(ellipse farthest-corner at left top, #FFFFFF 0%, #FFFFAC 8%, #D1B464 25%, #5d4a1f 62.5%, #5d4a1f 100%);
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    width: 300px;
+    border-radius: 15px;
+    text-align: center;
+    margin: auto;
+    margin-left: 30px;
+}
