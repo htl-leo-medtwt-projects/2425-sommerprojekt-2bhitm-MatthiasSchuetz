@@ -45,7 +45,7 @@ h1 {
 ------------
 */
 
-#allgemein {
+.navBoxLeft {
     border-radius: 37px;
     border: 1px solid #C89999;
     background: linear-gradient(270deg, rgba(0, 0, 0, 0.89) 48.84%, rgba(119, 37, 37, 0.64) 104.14%);
@@ -53,15 +53,65 @@ h1 {
     display: grid;
     grid-template-columns: auto auto;
     width: 70%;
+    height: 258px;
     margin-left: auto;
     margin-right: auto;
+    margin-bottom: 50px;
 }
 
-#allgemein>img {
+.navBoxLeft>img {
+    width: 375px;
+    position: relative;
+    right: -23%;
+}
+
+.navBoxRight {
+    border-radius: 37px;
+    border: 1px solid #C89999;
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0.89) 51.17%, rgba(119, 37, 37, 0.64) 100%);
+    box-shadow: -14px 14px 4px 0px rgba(82, 33, 33, 0.41);
+    display: grid;
+    grid-template-columns: auto auto;
+    width: 70%;
+    height: 258px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 50px;
+}
+
+.navBoxRight>img {
+    width: 375px;
+    position: relative;
+    right: -10%;
+}
+
+
+#helmet {
     width: 375px;
     height: 258px;
     position: relative;
     right: -23%;
+}
+
+#lego_marvel_sh_logo {
+    position: relative;
+    bottom: -60px;
+}
+
+#thinking_img {
+    height: 258px;
+    position: relative;
+    right: 0%;
+    border-radius: 37px;
+}
+
+#idel_gif {
+    transform: rotateY(180deg);
+    position: relative;
+    right: -20%;
+    width: 300px;
+    height: 258px;
+    scale: 2;
 }
 
 .ueberschrift {
