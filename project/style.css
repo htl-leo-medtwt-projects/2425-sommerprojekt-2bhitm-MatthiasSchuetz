@@ -2,6 +2,11 @@
 -------
 */
 
+:root {
+    --color-background: linear-gradient(294deg, #000 -5.56%, #100000 11.42%, #870303 138.13%, #4B0202 138.13%);
+    --color-gold-gradient: radial-gradient(ellipse farthest-corner at right bottom, #FEDB37 0%, #FDB931 8%, #9f7928 30%, #8A6E2F 40%, transparent 80%), radial-gradient(ellipse farthest-corner at left top, #FFFFFF 0%, #FFFFAC 8%, #D1B464 25%, #5d4a1f 62.5%, #5d4a1f 100%);
+}
+
 @font-face {
     font-family: "head";
     src: url("./inhalt/Fonts/Headlines-BoldItalic.otf");
@@ -17,7 +22,7 @@
 */
 
 body {
-    background: linear-gradient(294deg, #000 -5.56%, #100000 11.42%, #870303 138.13%, #4B0202 138.13%);
+    background: var(--color-background);
 }
 
 a {
@@ -27,10 +32,7 @@ a {
 h1 {
     font-family: head;
     font-size: 64px;
-    background: radial-gradient(ellipse farthest-corner at right bottom, #FEDB37 0%, #FDB931 8%, #9f7928 30%, #8A6E2F 40%, transparent 80%),
-    radial-gradient(ellipse farthest-corner at left top, #FFFFFF 0%, #FFFFAC 8%, #D1B464 25%, #5d4a1f 62.5%, #5d4a1f 100%);
-    /*-webkit-text-fill-color: transparent;
-    background-clip: text;*/
+    background: var(--color-gold-gradient);
     width: 300px;
     border-radius: 15px;
     margin-left: auto;
@@ -45,6 +47,16 @@ h1 {
 ------------
 */
 
+#navigation>a {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.navItem {
+    display: block;
+    width: 900px;
+}
+
 .navBoxLeft {
     border-radius: 37px;
     border: 1px solid #C89999;
@@ -52,11 +64,28 @@ h1 {
     box-shadow: 14px 14px 4px 0px rgba(82, 33, 33, 0.41);
     display: grid;
     grid-template-columns: auto auto;
-    width: 70%;
+    width: 100%;
     height: 258px;
-    margin-left: auto;
-    margin-right: auto;
     margin-bottom: 50px;
+    
+}
+
+.ueberschrift {
+    margin-top: 0px;
+    transition: all 0.5s ease-in-out;
+}
+
+.navBoxLeft:hover .ueberschrift {
+    transform: translateY(-50px);
+}
+
+.navBoxRight:hover .ueberschrift {
+    transform: translateY(-50px);
+}
+
+.navBoxRight>h2 {
+    position: relative;
+    left: 70px;
 }
 
 .navBoxLeft>img {
@@ -72,10 +101,8 @@ h1 {
     box-shadow: -14px 14px 4px 0px rgba(82, 33, 33, 0.41);
     display: grid;
     grid-template-columns: auto auto;
-    width: 70%;
+    width: 100%;
     height: 258px;
-    margin-left: auto;
-    margin-right: auto;
     margin-bottom: 50px;
 }
 
@@ -90,12 +117,13 @@ h1 {
     width: 375px;
     height: 258px;
     position: relative;
-    right: -23%;
+    right: -13%;
 }
 
 #lego_marvel_sh_logo {
     position: relative;
     bottom: -60px;
+    left: 0px;
 }
 
 #thinking_img {
