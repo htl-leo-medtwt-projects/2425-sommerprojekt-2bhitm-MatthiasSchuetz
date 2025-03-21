@@ -70,9 +70,43 @@ h1 {
     
 }
 
+.navBoxLeft>p {
+    opacity: 0;
+    margin-top: -100px;
+    margin-left: 60px;
+    text-decoration: none;
+    color: white;
+    font-size: larger;
+    font-family: text;
+    transition: all 0.5s ease-in-out;
+    width: 300px;
+}
+
+.navBoxRight>p {
+    opacity: 0;
+    margin-top: -100px;
+    margin-left: 540px;
+    text-decoration: none;
+    color: white;
+    font-size: larger;
+    font-family: text;
+    transition: all 0.5s ease-in-out;
+    width: 300px;
+    text-align: right;
+}
+
+
 .ueberschrift {
     margin-top: 0px;
     transition: all 0.5s ease-in-out;
+}
+
+.navBoxLeft:hover .info {
+    opacity: 1;
+}
+
+.navBoxRight:hover .info {
+    opacity: 1;
 }
 
 .navBoxLeft:hover .ueberschrift {
@@ -85,7 +119,7 @@ h1 {
 
 .navBoxRight>h2 {
     position: relative;
-    left: 70px;
+    left: -250px;
 }
 
 .navBoxLeft>img {
@@ -117,7 +151,7 @@ h1 {
     width: 375px;
     height: 258px;
     position: relative;
-    right: -13%;
+    right: -11%;
 }
 
 #lego_marvel_sh_logo {
