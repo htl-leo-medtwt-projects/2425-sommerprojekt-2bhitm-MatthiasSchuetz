@@ -34,7 +34,7 @@ h1 {
     font-family: head;
     font-size: 64px;
     background: var(--color-gold-gradient);
-    width: 300px;
+    width: 350px;
     border-radius: 15px;
     margin-left: auto;
     margin-right: auto;
@@ -182,8 +182,7 @@ h1:hover {
 .ueberschrift {
     font-family: head;
     font-size: 64px;
-    background: radial-gradient(ellipse farthest-corner at right bottom, #FEDB37 0%, #FDB931 8%, #9f7928 30%, #8A6E2F 40%, transparent 80%),
-    radial-gradient(ellipse farthest-corner at left top, #FFFFFF 0%, #FFFFAC 8%, #D1B464 25%, #5d4a1f 62.5%, #5d4a1f 100%);
+    background: var(--color-gold-gradient);
     -webkit-text-fill-color: transparent;
     background-clip: text;
     width: 300px;
@@ -191,4 +190,41 @@ h1:hover {
     text-align: center;
     margin: auto;
     margin-left: 30px;
+}
+
+/*Allgemein*/
+
+/*Armor Locker*/
+
+#armors {
+    margin-left: auto;
+    margin-right: auto;
+    width: 800px;
+}
+
+#armors>h2 {
+    text-align: center;
+    font-family: head;
+    font-size: 50px;
+    background: var(--color-gold-gradient);
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    width: 300px;
+    border-radius: 15px;
+    margin: auto;
+}
+
+#locker {
+    width: 100%;
+}
+
+#shownArmor>img {
+    width: 33%;
+    position: relative;
+    top: -470px;
+}
+
+#changeArmors {
+    position: absolute;
+    top: 100px;
 }
