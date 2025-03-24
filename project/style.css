@@ -218,13 +218,36 @@ h1:hover {
     width: 100%;
 }
 
-#shownArmor>img {
-    width: 33%;
+#shownArmor {
+    display: flex;
+    justify-content: space-around;
+}
+
+#shownArmor>div>img {
+    width: 100%;
     position: relative;
     top: -470px;
 }
 
 #changeArmors {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-gap: 355%;
     position: absolute;
-    top: 100px;
+    top: 60%;
+    left: 14%;
+}
+
+#changeArmors>div>img {
+    width: 120px;
+    cursor: pointer;
+    transition: all 0.5s ease-in-out;
+}
+
+#changeArmors>div>img:hover {
+    scale: 1.2;
+}
+
+#imgLeft {
+    rotate: 180deg;
 }

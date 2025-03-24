@@ -1,40 +1,36 @@
-let firstArmor = 2;
+let num = [
+    '<img src="../inhalt/Bilder/suits/mk2.png" alt="mk2">',
+    '<img src="../inhalt/Bilder/suits/mk3.png" alt="mk3">',
+    '<img src="../inhalt/Bilder/suits/mk4.png" alt="mk4">',
+    '<img src="../inhalt/Bilder/suits/mk5.png" alt="mk5">'
+ ]
 
-function changeArmorsRight() {
-    let tempstring = "";
+let bild1 = document.getElementById("armor1")
+let bild2 = document.getElementById("armor2")
+let bild3 = document.getElementById("armor3")
 
-    for (let i = 0; i < 3; i++) {
-        if ((firstArmor + 1) > 5) {
-            tempstring += `<img id="armor" src="../inhalt/Bilder/suits/mk${2}.png" alt="mk${2}"></img>`
-            firstArmor = 2;
-        } else {
-            tempstring += `<img id="armor" src="../inhalt/Bilder/suits/mk${firstArmor + 1}.png" alt="mk${firstArmor + 1}"></img>`
-        }
-        
-        firstArmor++;
-        console.log(firstArmor);
-    }
-
-    firstArmor -= 2;
-
-    document.getElementById("shownArmor").innerHTML = tempstring;
+function right() {
+let tempR = num[0];
+for(i = 0; i < num.length; i++) {
+ num[i] = num[i + 1];
 }
 
-function changeArmorsLeft() {
-    let tempstring = "";
+num[3] = tempR;//num an der Stelle der Anzahl der Anzüge im Array
 
-    for (let i = 0; i < 3; i++) {
-        if((firstArmor - 1) <= 1) {
-            tempstring += `<img id="armor" src="../inhalt/Bilder/suits/mk${5}.png" alt="mk${5}"></img>`
-            firstArmor = 5;
-        } else {
-           tempstring += `<img id="armor" src="../inhalt/Bilder/suits/mk${firstArmor - 1}.png" alt="mk${firstArmor - 1}"></img>` 
-        }
-        firstArmor++;
-        console.log(firstArmor);
-    }
+bild1.innerHTML = num[2];
+bild2.innerHTML = num[1];
+bild3.innerHTML = num[0];
+}
 
-    firstArmor -= 4;
+function left() {
+let tempR = num[0];
+for(i = 0; i < num.length; i++) {
+ num[i] = num[i + 1];
+}
 
-    document.getElementById("shownArmor").innerHTML = tempstring;
+num[3] = tempR;//num an der Stelle der Anzahl der Anzüge im Array
+
+bild1.innerHTML = num[0];
+bild2.innerHTML = num[1];
+bild3.innerHTML = num[2];
 }
