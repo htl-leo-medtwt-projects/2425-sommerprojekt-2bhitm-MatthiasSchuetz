@@ -1,0 +1,14 @@
+{
+    "suits": [
+        {
+            "name": "MK2",
+            "img": "../Inhalt/Bilder/suits/mk2.png",
+            "films": [
+                "Ironman 1"
+            ],
+            "abilities": [
+                "Flugfähigkeit"
+            ]
+        }
+    ]
+    }
