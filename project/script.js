@@ -1,4 +1,5 @@
 let num = [
+    '<img src="../inhalt/Bilder/suits/mk1.png" alt="mk1">',
     '<img src="../inhalt/Bilder/suits/mk2.png" alt="mk2">',
     '<img src="../inhalt/Bilder/suits/mk3.png" alt="mk3">',
     '<img src="../inhalt/Bilder/suits/mk4.png" alt="mk4">',
@@ -15,7 +16,7 @@ for(i = 0; i < num.length; i++) {
  num[i] = num[i + 1];
 }
 
-num[3] = tempR;//num an der Stelle der Anzahl der Anzüge im Array
+num[num.length - 1] = tempR;//num an der Stelle der Anzahl der Anzüge im Array
 
 bild1.innerHTML = num[2];
 bild2.innerHTML = num[1];
@@ -28,7 +29,7 @@ for(i = 0; i < num.length; i++) {
  num[i] = num[i + 1];
 }
 
-num[3] = tempR;//num an der Stelle der Anzahl der Anzüge im Array
+num[num.length -1] = tempR;//num an der Stelle der Anzahl der Anzüge im Array
 
 bild1.innerHTML = num[0];
 bild2.innerHTML = num[1];
