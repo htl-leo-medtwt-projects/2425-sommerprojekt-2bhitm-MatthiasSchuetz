@@ -11,16 +11,17 @@ let bild2 = document.getElementById("armor2")
 let bild3 = document.getElementById("armor3")
 
 function right() {
-let tempR = num[0];
-for(i = 0; i < num.length; i++) {
- num[i] = num[i + 1];
+    console.log(num)
+let tempR = num[num.length - 1];
+for(i = num.length - 1; i > 0; i--) {
+ num[i] = num[i - 1];
 }
 
-num[num.length - 1] = tempR;//num an der Stelle der Anzahl der Anzüge im Array
+num[0] = tempR;//num an der Stelle der Anzahl der Anzüge im Array
 
-bild1.innerHTML = num[2];
+bild1.innerHTML = num[0];
 bild2.innerHTML = num[1];
-bild3.innerHTML = num[0];
+bild3.innerHTML = num[2];
 }
 
 function left() {
