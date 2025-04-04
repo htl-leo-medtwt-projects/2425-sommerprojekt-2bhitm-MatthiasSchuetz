@@ -1,5 +1,5 @@
-{
-    "suits": [
+
+    let suits = [
         {
             "name": "MK1",
             "img": "../Inhalt/Bilder/suits/mk1.png",
@@ -137,4 +137,3 @@
             ]
         }
     ]
-    }
