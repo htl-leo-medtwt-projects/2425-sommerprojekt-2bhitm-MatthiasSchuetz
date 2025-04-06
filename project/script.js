@@ -1,9 +1,9 @@
 let num = [
-    '<img src="../inhalt/Bilder/suits/mk1.png" alt="mk1">',
-    '<img src="../inhalt/Bilder/suits/mk2.png" alt="mk2">',
-    '<img src="../inhalt/Bilder/suits/mk3.png" alt="mk3">',
-    '<img src="../inhalt/Bilder/suits/mk4.png" alt="mk4">',
-    '<img src="../inhalt/Bilder/suits/mk5.png" alt="mk5">'
+    '../inhalt/Bilder/suits/mk1.png',
+    '../inhalt/Bilder/suits/mk2.png',
+    '../inhalt/Bilder/suits/mk3.png',
+    '../inhalt/Bilder/suits/mk4.png',
+    '../inhalt/Bilder/suits/mk5.png'
  ]
 
 let bild1 = document.getElementById("armor1")
@@ -19,9 +19,9 @@ for(i = num.length - 1; i > 0; i--) {
 
 num[0] = tempR;//num an der Stelle der Anzahl der Anzüge im Array
 
-bild1.innerHTML = num[0];
-bild2.innerHTML = num[1];
-bild3.innerHTML = num[2];
+bild1.innerHTML = `<img src="${num[0]}" alt="">`;
+bild2.innerHTML = `<img src="${num[1]}" alt="">`;
+bild3.innerHTML = `<img src="${num[2]}" alt="">`;
 }
 
 function left() {
@@ -32,7 +32,7 @@ for(i = 0; i < num.length; i++) {
 
 num[num.length -1] = tempR;//num an der Stelle der Anzahl der Anzüge im Array
 
-bild1.innerHTML = num[0];
-bild2.innerHTML = num[1];
-bild3.innerHTML = num[2];
+bild1.innerHTML = `<img src="${num[0]}" alt="">`;
+bild2.innerHTML = `<img src="${num[1]}" alt="">`;
+bild3.innerHTML = `<img src="${num[2]}" alt="">`;
 }
