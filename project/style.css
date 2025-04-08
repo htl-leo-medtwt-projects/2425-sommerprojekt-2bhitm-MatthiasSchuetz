@@ -224,9 +224,15 @@ h1:hover {
 }
 
 #shownArmor>div>img {
+    cursor: pointer;
     width: 100%;
     position: relative;
     top: -470px;
+    transition: all 0.3s ease-in-out;
+}
+
+#shownArmor>div>img:hover {
+    scale: 1.05;
 }
 
 #changeArmors {
@@ -250,4 +256,82 @@ h1:hover {
 
 #imgLeft {
     rotate: 180deg;
+}
+
+#infoSuits {
+    position: fixed;
+    top: 10px;
+    left: 28.7%;
+    width: 650px;
+}
+
+#suitName>h2 {
+    padding-left: 10px;
+    padding-right: 10px;
+    text-align: left;
+    font-family: head;
+    font-size: 50px;
+    background: var(--color-gold-gradient);
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    border-radius: 15px;
+    margin: auto;
+}
+
+#suitInfo {
+    background-color: #000;
+    border-radius: 5px;
+}
+
+#infoImg>div>div>h2 {
+    padding-left: 10px;
+    padding-right: 10px;
+    text-align: left;
+    font-family: head;
+    font-size: 30px;
+    background: var(--color-gold-gradient);
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    border-radius: 15px;
+    margin: auto;
+}
+
+#infoImg>div>img {
+    height: 600px;
+}
+
+#infoImg>div>div>p {
+    padding-left: 10px;
+    padding-right: 10px;
+    font-family: text;
+    color: white;
+}
+
+#infoImg {
+    display: grid;
+    grid-template-columns: auto auto;
+}
+
+#closeSuitInfo {
+    color: white;
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 40px;
+    font-family: text;
+    background: var(--color-background);
+    padding: 10px;
+    padding-top: 0px;
+    padding-bottom: 20px;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    border-radius: 5px;
+    border: white 1px solid;
+    transition: all 0.3s ease-in-out;
+}
+
+#closeSuitInfo:hover {
+    scale: 1.15;
 }

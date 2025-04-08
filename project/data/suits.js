@@ -20,7 +20,7 @@
                 "Ironman 1"
             ],
             "abilities": [
-                "Flugfähigkeit",
+                "Flugfaehigkeit",
                 "Repulsoren",
                 "Unibeam"
             ]
@@ -32,7 +32,7 @@
                 "Ironman 1"
             ],
             "abilities": [
-                "Flugfähigkeit",
+                "Flugfaehigkeit",
                 "Repulsoren",
                 "Unibeam",
                 "Mikro-Raketen",
@@ -47,7 +47,7 @@
                 "Ironman 2"
             ],
             "abilities": [
-                "Flugfähigkeit",
+                "Flugfaehigkeit",
                 "Repulsoren",
                 "Unibeam"
             ]
@@ -59,7 +59,7 @@
                 "Ironman 2"
             ],
             "abilities": [
-                "Flugfähigkeit",
+                "Flugfaehigkeit",
                 "Repulsoren",
                 "Unibeam",
                 "Transformieren (Koffer -> Anzug)"
@@ -73,7 +73,7 @@
                 "The Avengers"
             ],
             "abilities": [
-                "Flugfähigkeit",
+                "Flugfaehigkeit",
                 "Repulsoren",
                 "Unibeam",
                 "Starker Laser"
@@ -87,10 +87,10 @@
                 "The Avengers"
             ],
             "abilities": [
-                "Flugfähigkeit",
+                "Flugfaehigkeit",
                 "Repulsoren",
                 "Unibeam",
-                "Stärkerer Laser",
+                "Staerkerer Laser",
                 "Rufen mit Armbändern (Kommt als Rakete angeflogen)",
                 "Transformieren (Rakete -> Anzug)"
             ]
@@ -102,10 +102,10 @@
                 "Ironman 3"
             ],
             "abilities": [
-                "Flugfähigkeit",
+                "Flugfaehigkeit",
                 "Repulsoren",
                 "Unibeam",
-                "Särkere Rüstung für Schutz gegen kleine Raketen"
+                "Staerkere Rüstung für Schutz gegen kleine Raketen"
             ]
         },
         {
@@ -115,7 +115,7 @@
                 "Ironman 3"
             ],
             "abilities": [
-                "Flugfähigkeit",
+                "Flugfaehigkeit",
                 "Repulsoren",
                 "Unibeam",
                 "Schleudersitz Funktion",
@@ -129,11 +129,11 @@
                 "Ironman 3"
             ],
             "abilities": [
-                "Flugfähigkeit",
+                "Flugfaehigkeit",
                 "Repulsoren",
                 "Unibeam",
                 "Schnelles Ein- und Aussteigen von allen Seiten möglich",
-                "Extra Seitenrepulsoren für mehr Geschwindigkeit und Manövrierfähigkeit"
+                "Extra Seitenrepulsoren für mehr Geschwindigkeit und Manövrierfaehigkeit"
             ]
         }
     ]
