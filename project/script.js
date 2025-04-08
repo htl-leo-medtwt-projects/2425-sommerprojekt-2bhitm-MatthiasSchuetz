@@ -11,28 +11,28 @@ let bild2 = document.getElementById("armor2")
 let bild3 = document.getElementById("armor3")
 
 function right() {
-    console.log(num)
-let tempR = num[num.length - 1];
-for(i = num.length - 1; i > 0; i--) {
- num[i] = num[i - 1];
+    console.log(suits)
+let tempR = suits[suits.length - 1];
+for(i = suits.length - 1; i > 0; i--) {
+ suits[i] = suits[i - 1];
 }
 
-num[0] = tempR;//num an der Stelle der Anzahl der Anzüge im Array
+suits[0] = tempR;//num an der Stelle der Anzahl der Anzüge im Array
 
-bild1.innerHTML = `<img src="${num[0]}" alt="">`;
-bild2.innerHTML = `<img src="${num[1]}" alt="">`;
-bild3.innerHTML = `<img src="${num[2]}" alt="">`;
+bild1.innerHTML = `<img src="${suits[0].img}" alt="${suits[0].name}">`;
+bild2.innerHTML = `<img src="${suits[1].img}" alt="${suits[1].name}">`;
+bild3.innerHTML = `<img src="${suits[2].img}" alt="${suits[2].name}">`;
 }
 
 function left() {
-let tempR = num[0];
-for(i = 0; i < num.length; i++) {
- num[i] = num[i + 1];
+let tempR = suits[0];
+for(i = 0; i < suits.length; i++) {
+ suits[i] = suits[i + 1];
 }
 
-num[num.length -1] = tempR;//num an der Stelle der Anzahl der Anzüge im Array
+suits[suits.length -1] = tempR;//num an der Stelle der Anzahl der Anzüge im Array
 
-bild1.innerHTML = `<img src="${num[0]}" alt="">`;
-bild2.innerHTML = `<img src="${num[1]}" alt="">`;
-bild3.innerHTML = `<img src="${num[2]}" alt="">`;
+bild1.innerHTML = `<img src="${suits[0].img}" alt="${suits[0].name}">`;
+bild2.innerHTML = `<img src="${suits[1].img}" alt="${suits[1].name}">`;
+bild3.innerHTML = `<img src="${suits[2].img}" alt="${suits[2].name}">`;
 }
