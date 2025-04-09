@@ -46,17 +46,17 @@ function showSuitInfo(id) {
             <div id="suitName"><h2>${suits[id].name}</h2></div>
         `
 
-        tempstring += '<div id="infoImg"><div><div><h2>Filme:</h2></div><div id="suitFilm">'
+        tempstring += '<div id="infoImg"><div><div><h2>Filme:</h2></div><div id="suitFilm"><ul>'
         for (let i = 0; i < suits[id].films.length; i++) {
-            tempstring += `<p>${suits[id].films[i]}</p>`
+            tempstring += `<li><p>${suits[id].films[i]}</p></li>`
         }
 
-        tempstring += '</div><div><h2>Faehigkeiten:</h2></div><div id="suitAbilitie">'
+        tempstring += '</ul></div><div><h2>Faehigkeiten:</h2></div><div id="suitAbilitie"><ul>'
         for (let i = 0; i < suits[id].abilities.length; i++) {
-            tempstring += `<p>${suits[id].abilities[i]}</p>`
+            tempstring += `<li><p>${suits[id].abilities[i]}</p></li>`
         }
 
-        tempstring += '</div></div>'
+        tempstring += '</ul></div></div>'
 
         tempstring += `<div><img src="${suits[id].img}" alt="${suits[id].name}"></div></div>`
 
@@ -68,4 +68,28 @@ function showSuitInfo(id) {
 function closeSuitInfo() {
     document.getElementById('infoSuits').innerHTML = '';
 ;
+}
+
+
+let rulesOpened = false;
+function showRules() {
+    let tempstring = "";
+    if (!rulesOpened) {
+      document.getElementById('rules').style.display = 'block';
+
+    tempstring = `<h2>Regeln:</h2><br>
+                    <p>Weiche den Raketen und Flugzeugen mit Ironman aus. Wirst du getroffen bedeutet das "Game Over!"</p>
+                    <h2>Steuerung:</h2><br>
+                    <p>Bewege Ironman mit den Pfeiltasten nach oben und nach unten auf und ab.</<p>`
+
+        document.getElementById('rules').innerHTML = tempstring;  
+        rulesOpened = true;
+    } else {
+        document.getElementById('rules').style.display = 'none';
+        rulesOpened = false;
+    }
+}
+
+function startGame() {
+
 }
