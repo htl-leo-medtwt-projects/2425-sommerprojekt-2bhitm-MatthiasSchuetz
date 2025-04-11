@@ -427,5 +427,70 @@ h1:hover {
 #rules {
     display: none;
     text-align: center;
+    color: white;
+    font-family: text;
+}
+
+#closeRules {
+    width: 150px;
+    font-family: head;
+    font-size: 50px;
+    background: var(--color-gold-gradient);
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin: auto;
+    cursor: pointer;
+    transition: all 0.5s ease-in-out;
+}
+
+#closeRules:hover {
+    font-size: 60px;
+}
+
+#idel {
     position: absolute;
+    width: 600px;
+    top: 80px;
+}
+
+#missileIdel {
+    position: absolute;
+    width: 400px;
+    rotate: 180deg;
+    right: 10%;
+    top: 220px;
+}
+
+#missileIdel2 {
+    position: absolute;
+    width: 400px;
+    rotate: 180deg;
+    right: 5%;
+    top: 100px;
+}
+
+/*Game*/
+
+#gameBackgound {
+    width: 70%;
+    border: white 5px solid;
+    border-radius: 5px;
+    position: absolute;
+    top: 5%;
+    left: 15%;
+    z-index: -1;
+}
+
+#gameContent {
+    z-index: 2;
+}
+
+#player {
+    position: absolute;
+    left: 18%;
+    top: 35%;
+}
+
+#player>img {
+    width: 120px;
 }
