@@ -93,11 +93,3 @@ function showRules() {
         rulesOpened = false;
     }
 }
-
-function startGame() {
-    document.getElementById('körper').innerHTML = '';
-    document.getElementById('körper').innerHTML = `<img id="gameBackgound" src="../inhalt/Bilder/background.gif" alt=""></img>`;
-
-    document.getElementById('körper').innerHTML += `<div id="gameContent"></div>`
-    document.getElementById('körper').innerHTML += `<div id="player"><img src="../inhalt/Bilder/suits/mk1.png" alt="mk1"></div>`
-}
