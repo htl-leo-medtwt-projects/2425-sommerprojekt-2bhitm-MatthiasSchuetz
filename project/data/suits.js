@@ -37,7 +37,7 @@
                 "Unibeam",
                 "Mikro-Raketen",
                 "Schultermontierte Waffen",
-                "Fackeln"
+                "Täuschkörper"
             ]
         },
         {
@@ -134,6 +134,98 @@
                 "Unibeam",
                 "Schnelles Ein- und Aussteigen von allen Seiten möglich",
                 "Extra Seitenrepulsoren für mehr Geschwindigkeit und Manövrierfähigkeit"
+            ]
+        },
+        {
+            "name": "MK11",
+            "img": "../Inhalt/Bilder/suits/mk11.png",
+            "films": [
+                "Ironman 3"
+            ],
+            "abilities": [
+                "Flugfähigkeit",
+                "Repulsors",
+                "Unibeam",
+                "Mini-Raketen",
+                "Schnelles Ein- und Aussteigen von allen Seiten möglich"
+            ]
+        },
+        {
+            "name": "MK12",
+            "img": "../Inhalt/Bilder/suits/mk12.png",
+            "films": [
+                "Ironman 3"
+            ],
+            "abilities": [
+                "Flugfähigkeit",
+                "Repulsors",
+                "Unibeam",
+                "Raketen",
+                "Täuschkörper",
+                "Laser",
+                "Schnelles Ein- und Aussteigen von allen Seiten möglich"
+            ]
+        },
+        {
+            "name": "MK13",
+            "img": "../Inhalt/Bilder/suits/mk13.png",
+            "films": [
+                "Ironman 3"
+            ],
+            "abilities": [
+                "Flugfähigkeit",
+                "Repulsors",
+                "Unibeam",
+                "Raketen",
+                "Täuschkörper",
+                "Miniguns (2X)",
+                "Schnelles Ein- und Aussteigen von allen Seiten möglich"
+            ]
+        },
+        {
+            "name": "MK14",
+            "img": "../Inhalt/Bilder/suits/mk14.png",
+            "films": [
+                "Ironman 3"
+            ],
+            "abilities": [
+                "Flugfähigkeit",
+                "Repulsors",
+                "Unibeam",
+                "Raketen",
+                "Schnelles Ein- und Aussteigen von allen Seiten möglich"
+            ]
+        },
+        {
+            "name": "MK15 - Sneaky",
+            "img": "../Inhalt/Bilder/suits/mk15.png",
+            "films": [
+                "Ironman 3"
+            ],
+            "abilities": [
+                "Flugfähigkeit",
+                "Repulsors",
+                "Unibeam",
+                "Retroreflektierende Panele (IM3)",
+                "Retroreflektierende Beschichtung (JARVIS App)",
+                "Radarabsorbierende Beschichtung",
+                "Schalldämpfende Triebwerke",
+                "Schnelles Ein- und Aussteigen von allen Seiten möglich"
+            ]
+        },
+        {
+            "name": "MK16 - Nightclub",
+            "img": "../Inhalt/Bilder/suits/mk16.png",
+            "films": [
+                "Ironman 3"
+            ],
+            "abilities": [
+                "Flugfähigkeit",
+                "Repulsors",
+                "Unibeam",
+                "Fortschrittliches Tarnsystem",
+                "Fortschrittliche Farbtarntechnologie",
+                "Schnelles Ein- und Aussteigen von allen Seiten möglich"
             ]
         }
     ]
