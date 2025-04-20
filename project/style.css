@@ -248,13 +248,14 @@ h1:hover {
 #shownArmor {
     display: flex;
     justify-content: space-around;
+    position: absolute;
+    width: 53%;
+    top: 40%;
 }
 
 #shownArmor>div>img {
     cursor: pointer;
     width: 100%;
-    position: relative;
-    top: -470px;
     transition: all 0.3s ease-in-out;
 }
 
@@ -372,15 +373,16 @@ h1:hover {
 /*Tony Stark Steckbrief*/
 
 #steckbrief {
-    position: relative;
-    top: -300px;
+    margin-top: 80px;
+    height: 50%;
+    margin-bottom: 200px;
 }
 
 #steckbrief>img {
-    width: 80%;
-    position: relative;
-    top: -470px;
-    left: 10%;
+    width: 70%;
+    position: absolute;
+    left: 15%;
+    top: 130%;
     opacity: 0.7;
     border-radius: 15px;
     z-index: -1;
@@ -409,14 +411,14 @@ h1:hover {
 #steckbriefInfo>h2 {
     font-family: head;
     font-size: 40px;
-    background: var(--color-gold-gradient);
+    background: var(--color-background);
     -webkit-text-fill-color: transparent;
     background-clip: text;
     margin: auto;
 }
 
 #steckbriefInfo>ul>li {
-    color: white;
+    color: rgb(240, 197, 197);
     font-family: text;
 }
 
