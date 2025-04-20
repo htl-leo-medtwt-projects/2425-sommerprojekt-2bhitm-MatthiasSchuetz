@@ -226,7 +226,7 @@ h1:hover {
 #armors {
     margin-left: auto;
     margin-right: auto;
-    width: 800px;
+    width: 53.5%;
 }
 
 #armors>h2 {
@@ -266,14 +266,18 @@ h1:hover {
 #changeArmors {
     display: grid;
     grid-template-columns: auto auto;
-    grid-gap: 355%;
     position: absolute;
     top: 60%;
     left: 14%;
+    width: 70%;
+}
+
+#changeArmors>div {
+    width: 27%;
 }
 
 #changeArmors>div>img {
-    width: 120px;
+    width: 92%;
     cursor: pointer;
     transition: all 0.5s ease-in-out;
 }
@@ -284,6 +288,11 @@ h1:hover {
 
 #imgLeft {
     rotate: 180deg;
+}
+
+#changeRight {
+    position: relative;
+    right: -80%;
 }
 
 #infoSuits {
