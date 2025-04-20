@@ -57,5 +57,5 @@ function gameLoop() {
 
 
 function movePlayer(y) {
-    document.getElementById('player').style.top = 
+    document.getElementById('player').style.top = (document.getElementById('player').offsetTop - (y * 15)) + 'px';
 }
