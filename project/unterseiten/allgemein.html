@@ -6,6 +6,10 @@
     <link rel="icon" type="image/x-icon" href="../inhalt/Bilder/helmet.png">
     <title>Allgemein</title>
     <link rel="stylesheet" href="../style.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" defer></script>
+
     <script src="../data/suits.js" defer></script>
     <script src="../script.js" defer></script>
 </head>
@@ -14,7 +18,8 @@
     <h1>ALLGEMEIN</h1>
     <div id="back"><a href="../index.html">Back to Mainpage</a></div>
 
-    <div id="armors">
+    <div class="animationItem">
+       <div id="armors">
         <h2>Ruestungen</h2>
         <img id="locker" src="../inhalt/Bilder/armor locker.png" alt="locker">
         <div id="shownArmor">
@@ -26,9 +31,11 @@
             <div id="changeLeft" onclick="left()"><img id="imgLeft" src="../inhalt/Bilder/arrow.png" alt="arrow"></div>
             <div id="changeRight"onclick="right()"><img id="imgRight" src="../inhalt/Bilder/arrow.png" alt="arrow"></div>
         </div>
+    </div> 
     </div>
-
-    <div id="steckbrief">
+    
+    <div class="animationItem">
+        <div id="steckbrief">
         <div>
             <h2>Tony Stark</h2>
         <div id="steckbriefInfo">
@@ -49,7 +56,8 @@
         
         <img src="../inhalt/Bilder/tonyStark.png" alt="tonyStarkBackground">
     </div>
-
+    </div>
+    
     <div id="infoSuits"></div>
 
 </body>
