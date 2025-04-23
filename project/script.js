@@ -7,9 +7,9 @@ let num = [
     '../inhalt/Bilder/suits/mk5.png'
  ]
 
-let bild1 = document.getElementById("armor1")
-let bild2 = document.getElementById("armor2")
-let bild3 = document.getElementById("armor3")
+let bild1 = document.getElementsByClassName("armor")[0]
+let bild2 = document.getElementsByClassName("armor")[1]
+let bild3 = document.getElementsByClassName("armor")[2]
 
 function left() {
     console.log(suits)
@@ -95,6 +95,7 @@ function showRules() {
     }
 }
 
+
 /*Gsap Scroll Animationen*/
 scrollAnimation();
 
@@ -115,7 +116,6 @@ function scrollAnimation() {
         let element = sections[i];
     
         if(i%2 == 0) {
-            
             gsap.set(element, {
                 x: '-50%',
                 scale: 0,
@@ -126,28 +126,30 @@ function scrollAnimation() {
                 scale: 0,
             });
         }
+
         
         gsap.to(element, {
             x: 0,
             scale: 1,
-            duration: 1,
+            duration: 2.5,
+            ease: 'power4.out',
             scrollTrigger: {
                 trigger: element,
                 start: '50% 120%'
             }
         });
-        }
     }
-
+}
 
 
 
 
 function generateSite() {
-    document.getElementById('navigation').innerHTML = `<a class="navItem" href="./unterseiten/allgemein.html"><div class="navBoxLeft"><h2 class="ueberschrift">Allgemein</h2><img id="helmet" src="./inhalt/Bilder/helmet.png" alt="helmet"><p class="info">Allgemeine Informationen über Ironman und seine Rüstungen.</p></div></a>
-        <a class="navItem" href="./unterseiten/filme.html"><div class="navBoxRight"><img src="./inhalt/Bilder/flying.png" alt="flying"><h2 class="ueberschrift">Filme</h2><p class="info">Informationen zu allen Ironman und Avengers Filmen.</p></div></a>
-        <a class="navItem" href="./unterseiten/games.html"><div class="navBoxLeft"><h2 class="ueberschrift">Games</h2><img id="lego_marvel_sh_logo" src="./inhalt/Bilder/lego_marvel_sh.png" alt="lego_logo"><p class="info">Informationen zu spielen wie "Ironman VR" oder "Lego Marvel Superheros".</p></div></a>
-        <a class="navItem" href="./unterseiten/quiz.html"><div class="navBoxRight"><img id="thinking_img" src="./inhalt/Bilder/thinking.png" alt="thinking"><h2 class="ueberschrift">Quiz</h2><p class="info">Ein Quiz über die Inhalte der Seite mit Belohnungen.</p></div></a>
-        <a class="navItem" href="./unterseiten/minigame.html"><div class="navBoxLeft"><h2 class="ueberschrift">Minigame</h2><img id="idel_gif" src="./inhalt/Bilder/idel 2.gif" alt="idel"><p class="info">Rette die Welt in diesem Minispiel und erhalte Belohnungen.</p></div></a>`;
+    document.getElementById('navigation').innerHTML = `<div class="animationItem"><a class="navItem" href="./unterseiten/allgemein.html"><div class="navBoxLeft"><h2 class="ueberschrift">Allgemein</h2><img id="helmet" src="./inhalt/Bilder/helmet.png" alt="helmet"><p class="info">Allgemeine Informationen über Ironman und seine Rüstungen.</p></div></a></div>
+        <div class="animationItem"><a class="navItem" href="./unterseiten/filme.html"><div class="navBoxRight"><img src="./inhalt/Bilder/flying.png" alt="flying"><h2 class="ueberschrift">Filme</h2><p class="info">Informationen zu allen Ironman und Avengers Filmen.</p></div></a></div>
+        <div class="animationItem"><a class="navItem" href="./unterseiten/games.html"><div class="navBoxLeft"><h2 class="ueberschrift">Games</h2><img id="lego_marvel_sh_logo" src="./inhalt/Bilder/lego_marvel_sh.png" alt="lego_logo"><p class="info">Informationen zu spielen wie "Ironman VR" oder "Lego Marvel Superheros".</p></div></a></div>
+        <div class="animationItem"><a class="navItem" href="./unterseiten/quiz.html"><div class="navBoxRight"><img id="thinking_img" src="./inhalt/Bilder/thinking.png" alt="thinking"><h2 class="ueberschrift">Quiz</h2><p class="info">Ein Quiz über die Inhalte der Seite mit Belohnungen.</p></div></a></div>
+        <div class="animationItem"><a class="navItem" href="./unterseiten/minigame.html"><div class="navBoxLeft"><h2 class="ueberschrift">Minigame</h2><img id="idel_gif" src="./inhalt/Bilder/idel 2.gif" alt="idel"><p class="info">Rette die Welt in diesem Minispiel und erhalte Belohnungen.</p></div></a></div>`;
+        scrollAnimation();
 }
 generateSite();

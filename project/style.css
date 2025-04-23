@@ -85,6 +85,8 @@ h1:hover {
 .navItem {
     display: block;
     width: 900px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .navBoxLeft {
@@ -394,7 +396,7 @@ h1:hover {
     width: 70%;
     position: absolute;
     left: 15%;
-    top: 0%;
+    top: 17%;
     opacity: 0.7;
     border-radius: 15px;
     z-index: -1;
