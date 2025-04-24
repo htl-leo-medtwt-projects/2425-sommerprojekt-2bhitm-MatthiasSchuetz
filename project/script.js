@@ -10,6 +10,10 @@ let num = [
 let bild1 = document.getElementsByClassName("armor")[0]
 let bild2 = document.getElementsByClassName("armor")[1]
 let bild3 = document.getElementsByClassName("armor")[2]
+let bild4 = document.getElementsByClassName("armor")[3]
+let bild5 = document.getElementsByClassName("armor")[4]
+
+
 
 function left() {
     console.log(suits)
@@ -20,9 +24,45 @@ for(i = suits.length - 1; i > 0; i--) {
 
 suits[0] = tempR;//num an der Stelle der Anzahl der Anzüge im Array
 
-bild1.innerHTML = `<img onclick="showSuitInfo(0)" src="${suits[0].img}" alt="${suits[0].name}">`;
-bild2.innerHTML = `<img onclick="showSuitInfo(1)" src="${suits[1].img}" alt="${suits[1].name}">`;
-bild3.innerHTML = `<img onclick="showSuitInfo(2)" src="${suits[2].img}" alt="${suits[2].name}">`;
+
+    gsap.registerPlugin(ScrollTrigger);
+    
+    window.onload = ()=>{
+        document.querySelector('body').style.opacity = 1;
+    }
+    
+    let sections = document.querySelectorAll('.armor');
+    for (let i = 0; i < sections.length; i++) {
+        generateScrollAnimation(i);
+    }
+    
+    function generateScrollAnimation(i){
+        let element = sections[i];
+    
+            gsap.set(element, {
+                x: '0%',
+            });
+        
+        
+            gsap.to(element, {
+                x: 270,
+                scale: 1,
+                duration: 2.5,
+                ease: 'power4.out',
+                scrollTrigger: {
+                    trigger: element,
+                    start: '50% 120%'
+                }
+            });
+    }
+    
+setTimeout(function() {
+    bild1.innerHTML = `<img src="${suits[suits.length - 1].img}" alt="${suits[suits.length - 1].name}">`;
+    bild2.innerHTML = `<img onclick="showSuitInfo(0)" src="${suits[0].img}" alt="${suits[0].name}">`;
+    bild3.innerHTML = `<img onclick="showSuitInfo(1)" src="${suits[1].img}" alt="${suits[1].name}">`;
+    bild4.innerHTML = `<img onclick="showSuitInfo(2)" src="${suits[2].img}" alt="${suits[2].name}">`;
+    bild5.innerHTML = `<img src="${suits[3].img}" alt="${suits[3].name}">`;
+},2500);
 }
 
 function right() {
@@ -33,9 +73,45 @@ for(i = 0; i < suits.length; i++) {
 
 suits[suits.length -1] = tempR;//num an der Stelle der Anzahl der Anzüge im Array
 
-bild1.innerHTML = `<img onclick="showSuitInfo(0)" src="${suits[0].img}" alt="${suits[0].name}">`;
-bild2.innerHTML = `<img onclick="showSuitInfo(1)" src="${suits[1].img}" alt="${suits[1].name}">`;
-bild3.innerHTML = `<img onclick="showSuitInfo(2)" src="${suits[2].img}" alt="${suits[2].name}">`;
+
+    gsap.registerPlugin(ScrollTrigger);
+    
+    window.onload = ()=>{
+        document.querySelector('body').style.opacity = 1;
+    }
+    
+    let sections = document.querySelectorAll('.armor');
+    for (let i = 0; i < sections.length; i++) {
+        generateScrollAnimation(i);
+    }
+    
+    function generateScrollAnimation(i){
+        let element = sections[i];
+    
+            gsap.set(element, {
+                x: '0%',
+            });
+
+        
+        gsap.to(element, {
+            x: 270,
+            scale: 1,
+            duration: 2.5,
+            ease: 'power4.out',
+            scrollTrigger: {
+                trigger: element,
+                start: '50% 120%'
+            }
+        });
+    }
+    
+    setTimeout(function() {
+        bild1.innerHTML = `<img src="${suits[suits.length - 1].img}" alt="${suits[suits.length - 1].name}">`;
+        bild2.innerHTML = `<img onclick="showSuitInfo(0)" src="${suits[0].img}" alt="${suits[0].name}">`;
+        bild3.innerHTML = `<img onclick="showSuitInfo(1)" src="${suits[1].img}" alt="${suits[1].name}">`;
+        bild4.innerHTML = `<img onclick="showSuitInfo(2)" src="${suits[2].img}" alt="${suits[2].name}">`;
+        bild5.innerHTML = `<img src="${suits[3].img}" alt="${suits[3].name}">`;
+    },2500);
 }
 
 

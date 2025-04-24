@@ -14,6 +14,11 @@
     <script src="../script.js" defer></script>
 </head>
 <body>
+    <style>
+        #armorInvis {
+            z-index: 0;
+        }
+    </style>
     
     <h1>ALLGEMEIN</h1>
     <div id="back"><a href="../index.html">Back to Mainpage</a></div>
@@ -23,9 +28,11 @@
         <h2>Ruestungen</h2>
         <img id="locker" src="../inhalt/Bilder/armor locker.png" alt="locker">
         <div id="shownArmor">
+            <div class="armor" id="armorInvis"><img src="../inhalt/Bilder/suits/mk16.png" alt="mk16"></div>
             <div class="armor"><img onclick="showSuitInfo(0)" src="../inhalt/Bilder/suits/mk1.png" alt="mk1"></div>
             <div class="armor"><img onclick="showSuitInfo(1)" src="../inhalt/Bilder/suits/mk2.png" alt="mk2"></div>
             <div class="armor"><img onclick="showSuitInfo(2)" src="../inhalt/Bilder/suits/mk3.png" alt="mk3"></div>
+            <div class="armor" id="armorInvis"><img src="../inhalt/Bilder/suits/mk4.png" alt="mk4"></div>
         </div>
         <div id="changeArmors">
             <div id="changeLeft" onclick="left()"><img id="imgLeft" src="../inhalt/Bilder/arrow.png" alt="arrow"></div>

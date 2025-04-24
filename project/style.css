@@ -251,8 +251,12 @@ h1:hover {
     display: flex;
     justify-content: space-around;
     position: absolute;
-    width: 53%;
-    top: 20%;
+    width: 89%;
+    top: 16%;
+    left: 5.5%;
+}
+
+.armor {
     z-index: 1;
 }
 
