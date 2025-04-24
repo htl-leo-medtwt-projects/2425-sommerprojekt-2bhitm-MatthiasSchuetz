@@ -23,7 +23,7 @@ for(i = suits.length - 1; i > 0; i--) {
 }
 
 suits[0] = tempR;//num an der Stelle der Anzahl der Anzüge im Array
-
+//Animation gerade in Arbeit!!!!
 
     gsap.registerPlugin(ScrollTrigger);
     
@@ -73,7 +73,7 @@ for(i = 0; i < suits.length; i++) {
 
 suits[suits.length -1] = tempR;//num an der Stelle der Anzahl der Anzüge im Array
 
-
+//Animation gerade in Arbeit!!!!
     gsap.registerPlugin(ScrollTrigger);
     
     window.onload = ()=>{
