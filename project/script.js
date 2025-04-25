@@ -44,7 +44,20 @@ suits[0] = tempR;//num an der Stelle der Anzahl der Anzüge im Array
             });
         
         
-            gsap.to(element, {
+            if(i == 0) {
+                gsap.to(element, {
+                    x: 270,
+                    scale: 1,
+                    opacity: 1,
+                    duration: 2.5,
+                    ease: 'power4.out',
+                    scrollTrigger: {
+                        trigger: element,
+                        start: '50% 120%'
+                    }
+                });
+            } else {
+                gsap.to(element, {
                 x: 270,
                 scale: 1,
                 duration: 2.5,
@@ -54,6 +67,21 @@ suits[0] = tempR;//num an der Stelle der Anzahl der Anzüge im Array
                     start: '50% 120%'
                 }
             });
+
+            if(i == 3) {
+                gsap.to(element, {
+                    x: 270,
+                    scale: 1,
+                    opacity: 0,
+                    duration: 2.5,
+                    ease: 'power4.out',
+                    scrollTrigger: {
+                        trigger: element,
+                        start: '50% 120%'
+                    }
+                });
+            }
+        }
     }
     
 setTimeout(function() {
@@ -62,7 +90,15 @@ setTimeout(function() {
     bild3.innerHTML = `<img onclick="showSuitInfo(1)" src="${suits[1].img}" alt="${suits[1].name}">`;
     bild4.innerHTML = `<img onclick="showSuitInfo(2)" src="${suits[2].img}" alt="${suits[2].name}">`;
     bild5.innerHTML = `<img src="${suits[3].img}" alt="${suits[3].name}">`;
-},2500);
+
+    bild1.style = `transform: translateX(2px);
+                        opacity: 0;`;
+    bild2.style = `transform: translateX(2px);`;
+    bild3.style = `transform: translateX(2px);`;
+    bild4.style = `transform: translateX(2px);`;
+    bild5.style = `transform: translateX(2px);
+                        opacity: 0;`;
+},2750);
 }
 
 function right() {
@@ -93,8 +129,21 @@ suits[suits.length -1] = tempR;//num an der Stelle der Anzahl der Anzüge im Arr
             });
 
         
-        gsap.to(element, {
-            x: 270,
+        if(i == 4) {
+            gsap.to(element, {
+                x: -270,
+                scale: 1,
+                opacity: 1,
+                duration: 2.5,
+                ease: 'power4.out',
+                scrollTrigger: {
+                    trigger: element,
+                    start: '50% 120%'
+                }
+            });
+        } else {
+            gsap.to(element, {
+            x: -270,
             scale: 1,
             duration: 2.5,
             ease: 'power4.out',
@@ -103,7 +152,23 @@ suits[suits.length -1] = tempR;//num an der Stelle der Anzahl der Anzüge im Arr
                 start: '50% 120%'
             }
         });
+
+        if(i == 1) {
+            gsap.to(element, {
+                x: -270,
+                scale: 1,
+                opacity: 0,
+                duration: 2.5,
+                ease: 'power4.out',
+                scrollTrigger: {
+                    trigger: element,
+                    start: '50% 120%'
+                }
+            });
+        }
+    }  
     }
+
     
     setTimeout(function() {
         bild1.innerHTML = `<img src="${suits[suits.length - 1].img}" alt="${suits[suits.length - 1].name}">`;
@@ -111,7 +176,15 @@ suits[suits.length -1] = tempR;//num an der Stelle der Anzahl der Anzüge im Arr
         bild3.innerHTML = `<img onclick="showSuitInfo(1)" src="${suits[1].img}" alt="${suits[1].name}">`;
         bild4.innerHTML = `<img onclick="showSuitInfo(2)" src="${suits[2].img}" alt="${suits[2].name}">`;
         bild5.innerHTML = `<img src="${suits[3].img}" alt="${suits[3].name}">`;
-    },2500);
+
+        bild1.style = `transform: translateX(-2px);
+                        opacity: 0;`;
+        bild2.style = `transform: translateX(-2px);`;
+        bild3.style = `transform: translateX(-2px);`;
+        bild4.style = `transform: translateX(-2px);`;
+        bild5.style = `transform: translateX(-2px);
+                        opacity: 0;`;
+    },2750);
 }
 
 
