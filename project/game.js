@@ -57,5 +57,13 @@ function gameLoop() {
 
 
 function movePlayer(y) {
-    document.getElementById('player').style.top = (document.getElementById('player').offsetTop - (y * 15)) + 'px';
+    if (document.getElementById('player').offsetTop >= 52 && document.getElementById('player').offsetTop <= 435) {
+       document.getElementById('player').style.top = (document.getElementById('player').offsetTop - (y * 15)) + 'px'; return;
+    } else {
+        if (document.getElementById('player').offsetTop <= 52) {
+            document.getElementById('player').style.top = (document.getElementById('player').offsetTop + 5) + 'px'; return;
+        } else {
+            document.getElementById('player').style.top = (document.getElementById('player').offsetTop - 5) + 'px'; return;
+        }
+    }
 }
