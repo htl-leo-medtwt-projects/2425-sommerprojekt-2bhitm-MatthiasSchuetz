@@ -1,4 +1,7 @@
 let gameIsRunning = false;
+let enemySpawnInterval = 1000;
+let enemyIsSpawning = false;
+let enemyCount = 0;
 
 function startGame() {
     document.getElementById('körper').innerHTML = '';
@@ -50,8 +53,16 @@ function gameLoop() {
         movePlayer(-1);
     }
 
+    if (enemyIsSpawning == false) {
+        enemyIsSpawning = true;
+        setTimeout(function() {
+            spawnEnemys();
+        }, enemySpawnInterval);
+        console.log(enemySpawnInterval)
+    }
+    
     if (gameIsRunning) {
-        setTimeout(gameLoop, 50); // async recursion
+        setTimeout(gameLoop, 50);
     }
 }
 
@@ -66,4 +77,17 @@ function movePlayer(y) {
             document.getElementById('player').style.top = (document.getElementById('player').offsetTop - 5) + 'px'; return;
         }
     }
+}
+
+
+function spawnEnemys() {
+    let rndSpawnHeight = (Math.random() * 500) - 100;
+
+    enemySpawnInterval = (Math.random() * 5000) + 1000;
+
+    document.getElementById('gameContent').innerHTML += `<div class="enemy"><img src="../inhalt/Bilder/missile.gif" alt="missile"></div>`
+    document.getElementsByClassName('enemy')[enemyCount].style.top = rndSpawnHeight + 'px';
+
+    enemyCount++;
+    enemyIsSpawning = false;
 }

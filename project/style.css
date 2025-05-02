@@ -549,3 +549,17 @@ h1:hover {
 #player>img {
     width: 120px;
 }
+
+.enemy {
+    position: absolute;
+    rotate: 180deg;
+    scale: 0.6;
+    right: 0%;
+
+    animation: enemyMove 0.5s linear;
+}
+
+@keyframes enemyMove {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
