@@ -83,10 +83,42 @@ function movePlayer(y) {
 function spawnEnemys() {
     let rndSpawnHeight = (Math.random() * 500) - 100;
 
-    enemySpawnInterval = (Math.random() * 5000) + 1000;
+    enemySpawnInterval = (Math.random() * 5000) + 2000;
 
     document.getElementById('gameContent').innerHTML += `<div class="enemy"><img src="../inhalt/Bilder/missile.gif" alt="missile"></div>`
     document.getElementsByClassName('enemy')[enemyCount].style.top = rndSpawnHeight + 'px';
+
+
+    gsap.registerPlugin(ScrollTrigger);
+    
+    window.onload = ()=>{
+        document.querySelector('body').style.opacity = 1;
+    }
+    
+    let sections = document.querySelectorAll('.enemy');
+    generateScrollAnimation(sections.length - 1);
+    console.log(sections.length - 1)
+    
+    
+    function generateScrollAnimation(i){
+    let element = sections[i];
+    
+        gsap.set(element, {
+            x: '0%',
+        });
+        
+            gsap.to(element, {
+                x: "-260%",
+                opacity: 1,
+                duration: 1.8,
+                ease: 'linear',
+                onComplete: () => element.style.display = 'none',
+                scrollTrigger: {
+                    trigger: element,
+                    start: '50% 120%'
+                }
+            });
+    }
 
     enemyCount++;
     enemyIsSpawning = false;
