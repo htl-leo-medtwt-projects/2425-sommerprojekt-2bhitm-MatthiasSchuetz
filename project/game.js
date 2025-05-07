@@ -60,6 +60,13 @@ function gameLoop() {
         }, enemySpawnInterval);
         console.log(enemySpawnInterval)
     }
+
+    let playerItemCollide = false;
+    playerItemCollide = isColliding(document.getElementById('player'), document.getElementsByClassName('enemy'));
+
+    if (playerItemCollide) {
+        console.log('collide')
+    }
     
     if (gameIsRunning) {
         setTimeout(gameLoop, 50);
@@ -69,12 +76,12 @@ function gameLoop() {
 
 function movePlayer(y) {
     if (document.getElementById('player').offsetTop >= 52 && document.getElementById('player').offsetTop <= 435) {
-       document.getElementById('player').style.top = (document.getElementById('player').offsetTop - (y * 15)) + 'px'; return;
+       document.getElementById('player').style.top = (document.getElementById('player').offsetTop - (y * 15)) + 'px';
     } else {
         if (document.getElementById('player').offsetTop <= 52) {
-            document.getElementById('player').style.top = (document.getElementById('player').offsetTop + 5) + 'px'; return;
+            document.getElementById('player').style.top = (document.getElementById('player').offsetTop + 5) + 'px';
         } else {
-            document.getElementById('player').style.top = (document.getElementById('player').offsetTop - 5) + 'px'; return;
+            document.getElementById('player').style.top = (document.getElementById('player').offsetTop - 5) + 'px';
         }
     }
 }
@@ -83,7 +90,7 @@ function movePlayer(y) {
 function spawnEnemys() {
     let rndSpawnHeight = (Math.random() * 500) - 100;
 
-    enemySpawnInterval = (Math.random() * 5000) + 2000;
+    enemySpawnInterval = (Math.random() * 1000) + 2000;
 
     document.getElementById('gameContent').innerHTML += `<div class="enemy"><img src="../inhalt/Bilder/missile.gif" alt="missile"></div>`
     document.getElementsByClassName('enemy')[enemyCount].style.top = rndSpawnHeight + 'px';
@@ -101,20 +108,21 @@ function spawnEnemys() {
     
     
     function generateScrollAnimation(i){
-    let element = sections[i];
+    let element = [];
+    element[i] = sections[i];
     
-        gsap.set(element, {
+        gsap.set(element[i], {
             x: '0%',
         });
         
-            gsap.to(element, {
+            gsap.to(element[i], {
                 x: "-260%",
                 opacity: 1,
                 duration: 1.8,
                 ease: 'linear',
-                onComplete: () => element.style.display = 'none',
+                onComplete: () => element[i].style.display = 'none',
                 scrollTrigger: {
-                    trigger: element,
+                    trigger: element[i],
                     start: '50% 120%'
                 }
             });
@@ -123,3 +131,29 @@ function spawnEnemys() {
     enemyCount++;
     enemyIsSpawning = false;
 }
+
+
+//Von Sprite Game
+function isColliding(div1, div2, tolerance = -5) {
+
+    let d1OffsetTop = div1.offsetTop;
+    let d1OffsetLeft = div1.offsetLeft; 
+    let d1Height = div1.clientHeight;
+    let d1Width = div1.clientWidth;
+    let d1Top = d1OffsetTop + d1Height;
+    let d1Left = d1OffsetLeft + d1Width;
+
+    let d2OffsetTop = div2.offsetTop;
+    let d2OffsetLeft = div2.offsetLeft; 
+    let d2Height = div2.clientHeight;
+    let d2Width = div2.clientWidth;
+    let d2Top = d2OffsetTop + d2Height;
+    let d2Left = d2OffsetLeft + d2Width;
+
+    let distanceTop = d2OffsetTop - d1Top;
+    let distanceBottom = d1OffsetTop - d2Top;
+    let distanceLeft = d2OffsetLeft - d1Left;
+    let distanceRight = d1OffsetLeft - d2Left;
+
+    return !(tolerance < distanceTop || tolerance < distanceBottom || tolerance < distanceLeft || tolerance < distanceRight);
+};
