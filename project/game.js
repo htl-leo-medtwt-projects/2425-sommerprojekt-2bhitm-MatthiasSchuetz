@@ -2,6 +2,7 @@ let gameIsRunning = false;
 let enemySpawnInterval = 1000;
 let enemyIsSpawning = false;
 let enemyCount = 0;
+let enemyAlive = false;
 
 function startGame() {
     document.getElementById('körper').innerHTML = '';
@@ -61,12 +62,15 @@ function gameLoop() {
         console.log(enemySpawnInterval)
     }
 
-    let playerItemCollide = false;
-    playerItemCollide = isColliding(document.getElementById('player'), document.getElementsByClassName('enemy'));
+    if (enemyAlive) {
+      let playerItemCollide = false;
+    playerItemCollide = isColliding(document.getElementById('player'), document.getElementsByClassName(`enemy`)[enemyCount]);
 
     if (playerItemCollide) {
         console.log('collide')
+    }  
     }
+    
     
     if (gameIsRunning) {
         setTimeout(gameLoop, 50);
@@ -92,9 +96,10 @@ function spawnEnemys() {
 
     enemySpawnInterval = (Math.random() * 1000) + 2000;
 
-    document.getElementById('gameContent').innerHTML += `<div class="enemy"><img src="../inhalt/Bilder/missile.gif" alt="missile"></div>`
+    document.getElementById('gameContent').innerHTML += `<div id="enemy${enemyCount}" class="enemy"><img src="../inhalt/Bilder/missile.gif" alt="missile"></div>`
     document.getElementsByClassName('enemy')[enemyCount].style.top = rndSpawnHeight + 'px';
 
+    enemyAlive = true;
 
     gsap.registerPlugin(ScrollTrigger);
     
@@ -121,6 +126,7 @@ function spawnEnemys() {
                 duration: 1.8,
                 ease: 'linear',
                 onComplete: () => element[i].style.display = 'none',
+                onComplete: () => enemyAlive = false,
                 scrollTrigger: {
                     trigger: element[i],
                     start: '50% 120%'
@@ -133,27 +139,17 @@ function spawnEnemys() {
 }
 
 
-//Von Sprite Game
-function isColliding(div1, div2, tolerance = -5) {
+//Inspiriert von Sprite Game collision detection
+function isColliding(div1, div2) {
 
-    let d1OffsetTop = div1.offsetTop;
-    let d1OffsetLeft = div1.offsetLeft; 
-    let d1Height = div1.clientHeight;
-    let d1Width = div1.clientWidth;
-    let d1Top = d1OffsetTop + d1Height;
-    let d1Left = d1OffsetLeft + d1Width;
+    let top1 = div1.offsetTop;
+    let front1 = div1.offsetLeft + div1.offsetWidth;
+    let bottom1 = div1.offsetTop + div1.offsetHeight;
 
-    let d2OffsetTop = div2.offsetTop;
-    let d2OffsetLeft = div2.offsetLeft; 
-    let d2Height = div2.clientHeight;
-    let d2Width = div2.clientWidth;
-    let d2Top = d2OffsetTop + d2Height;
-    let d2Left = d2OffsetLeft + d2Width;
+    let top2 = div2.offsetTop;
+    let front2 = div2.offsetLeft;
+    let bottom2 = div2.offsetTop + div2.offsetHeight;
+    console.log(top2, front2)
 
-    let distanceTop = d2OffsetTop - d1Top;
-    let distanceBottom = d1OffsetTop - d2Top;
-    let distanceLeft = d2OffsetLeft - d1Left;
-    let distanceRight = d1OffsetLeft - d2Left;
-
-    return !(tolerance < distanceTop || tolerance < distanceBottom || tolerance < distanceLeft || tolerance < distanceRight);
+    return ((front1 > front2 && top1 < bottom2) || (front1 > front2 && bottom1 > top2));
 };
