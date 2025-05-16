@@ -96,7 +96,7 @@ function movePlayer(y) {
 function spawnEnemys() {
     let rndSpawnHeight = (Math.random() * 500) - 100;
 
-    enemySpawnInterval = (Math.random() * 1000) + 6000;
+    enemySpawnInterval = (Math.random() * 1000) + 2500;
 
     document.getElementById('gameContent').innerHTML += `<div id="enemy${enemyCount}" class="enemy"><img src="../inhalt/Bilder/missile.gif" alt="missile"></div>`
     document.getElementsByClassName('enemy')[enemyCount].style.top = rndSpawnHeight + 'px';
@@ -123,9 +123,9 @@ function spawnEnemys() {
         });
         
             gsap.to(element[i], {
-                x: "-260%",
+                x: "-265%",
                 opacity: 1,
-                duration: 6,
+                duration: 2,
                 ease: 'linear',
                 onComplete: () => element[i].style.display = 'none',
                 onComplete: () => enemyAlive = false,
@@ -163,6 +163,7 @@ function isColliding(div1, div2) {
         top2 = div2.offsetTop + 180;
         front2 = translateX;
         bottom2 = div2.offsetTop + div2.offsetHeight - 180;
+            console.log(translateX)
     } else {
         top2 = div2.offsetTop + 180;
         front2 = 644;
@@ -170,8 +171,10 @@ function isColliding(div1, div2) {
         console.log('Keine Transformation gefunden.');
     }
 
-    console.log(front1)
-    console.log(window.innerWidth - 300 + front2)
+    if (front2 < -1045) {
+            div2.style.display = 'none';
+            enemyAlive = false;
+    }
 
     return ((front1 > (window.innerWidth - 300 + front2) && top1 < bottom2) && (front1 > front2 && bottom1 > top2));
 };
