@@ -11,6 +11,11 @@ function startGame() {
     document.getElementById('körper').innerHTML += `<div id="gameContent"></div>`
     document.getElementById('körper').innerHTML += `<div id="player"><img src="../inhalt/Bilder/suits/mk1.png" alt="mk1"></div>`
 
+
+    enemyCount = 0;
+    enemyAlive = false;
+    enemySpawnInterval = 1000;
+    enemyIsSpawning = false;
     gameIsRunning = true;
     gameLoop();
 }
@@ -54,14 +59,6 @@ function gameLoop() {
         movePlayer(-1);
     }
 
-    if (enemyIsSpawning == false) {
-        enemyIsSpawning = true;
-        setTimeout(function() {
-            spawnEnemys();
-        }, enemySpawnInterval);
-        console.log(enemySpawnInterval)
-    }
-
     if (enemyAlive) {
       let playerItemCollide = false;
       console.log(enemyCount);
@@ -70,7 +67,18 @@ function gameLoop() {
     if (playerItemCollide) {
         console.log('collide')
         playerItemCollide = false;
+        gameOver();
     }  
+    }
+
+    
+    if (enemyIsSpawning == false) {
+        enemyIsSpawning = true;
+    setTimeout(function() {
+        if (gameIsRunning) {
+        spawnEnemys();
+        }
+    }, enemySpawnInterval);
     }
     
     
@@ -125,7 +133,7 @@ function spawnEnemys() {
             gsap.to(element[i], {
                 x: "-265%",
                 opacity: 1,
-                duration: 2,
+                duration: 1.8,
                 ease: 'linear',
                 onComplete: () => element[i].style.display = 'none',
                 onComplete: () => enemyAlive = false,
@@ -163,18 +171,34 @@ function isColliding(div1, div2) {
         top2 = div2.offsetTop + 180;
         front2 = translateX;
         bottom2 = div2.offsetTop + div2.offsetHeight - 180;
-            console.log(translateX)
     } else {
         top2 = div2.offsetTop + 180;
         front2 = 644;
         bottom2 = div2.offsetTop + div2.offsetHeight - 180;
-        console.log('Keine Transformation gefunden.');
     }
 
-    if (front2 < -1045) {
+    if (front2 < -window.innerWidth + 500) {
             div2.style.display = 'none';
             enemyAlive = false;
     }
 
-    return ((front1 > (window.innerWidth - 300 + front2) && top1 < bottom2) && (front1 > front2 && bottom1 > top2));
+    return (front1 > (window.innerWidth - 250 + front2) && top1 < bottom2 && bottom1 > top2 && (window.innerWidth - 250 + front2) > front1 - div1.offsetWidth);
 };
+
+
+function gameOver() {
+    gameIsRunning = false;
+    enemyAlive = false;
+    enemySpawnInterval = 1000;
+    enemyIsSpawning = false;
+
+    document.getElementById('gameContent').innerHTML = '';
+    document.getElementById('player').style.display = 'none';
+    document.getElementById('gameBackgound').style.display = 'none';
+
+    document.getElementById('gameContent').innerHTML = `<div id="gameOver">
+    <h1>Game Over</h1>
+    <h2>Überlebte Raketen: ${enemyCount - 1}</h2>
+    <div id="restartButton" onclick="startGame()">Neustart</div>
+    </div>`;
+}
