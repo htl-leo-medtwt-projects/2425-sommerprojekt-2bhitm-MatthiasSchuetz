@@ -17,7 +17,7 @@ let questions = [
         "solution": "answer3",
     },
     {
-        "titel": "Wie heißt der Fater von Tony Stark?",
+        "titel": "Wie heisst der Fater von Tony Stark?",
         "answer1": "Howard Stark",
         "answer2": "Howard Potts",
         "answer3": "Henric Stark",
@@ -33,7 +33,7 @@ let questions = [
         "solution": "answer4",
     },
     {
-        "titel": "Wie heißt die künstliche Intelligenz von Tony Stark?",
+        "titel": "Wie heisst die kuenstliche Intelligenz von Tony Stark?",
         "answer1": "J.A.R.V.I.S.",
         "answer2": "R.E.P.O",
         "answer3": "M.A.T.Z.G.O",
@@ -41,7 +41,7 @@ let questions = [
         "solution": "answer1",
     },
     {
-        "titel": "Wie heißt der Schauspieler von Ironman?",
+        "titel": "Wie heisst der Schauspieler von Ironman?",
         "answer1": "Chris Evans",
         "answer2": "Robert Downey Jr.",
         "answer3": "Chris Hemsworth",
@@ -49,7 +49,7 @@ let questions = [
         "solution": "answer2",
     },
     {
-        "titel": "Wie heißt die Mutter von Tony Stark?",
+        "titel": "Wie heisst die Mutter von Tony Stark?",
         "answer1": "Maria Stark",
         "answer2": "Pepper Potts",
         "answer3": "Natasha Stark",
@@ -57,7 +57,7 @@ let questions = [
         "solution": "answer1",
     },
     {
-        "titel": "Wie heißt die Tochter von Tony Stark?",
+        "titel": "Wie heisst die Tochter von Tony Stark?",
         "answer1": "Megan Fox",
         "answer2": "Morgan Stark",
         "answer3": "Megan Stark",
@@ -65,7 +65,7 @@ let questions = [
         "solution": "answer2",
     },
     {
-        "titel": 'Wie heißt dieser Anzug? <img src="../inhalt/Bilder/suits/mk2.png" alt="suit">',
+        "titel": 'Wie heisst dieser Anzug? <img id="questionImg" src="../inhalt/Bilder/suits/mk2.png" alt="suit">',
         "answer1": "MK3",
         "answer2": "MK4",
         "answer3": "MK2",

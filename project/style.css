@@ -556,3 +556,42 @@ h1:hover {
     scale: 0.6;
     right: 0%;
 }
+
+
+/*Quiz-Unterseite
+---------------------
+*/
+
+.question {
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 37px;
+    border: 1px solid #C89999;
+    background: linear-gradient(270deg, rgba(0, 0, 0, 0.89) 48.84%, rgba(119, 37, 37, 0.64) 104.14%);
+    box-shadow: 10px 10px 4px 0px rgba(82, 33, 33, 0.41);
+    display: grid;
+    grid-template-rows: auto auto;
+    width: 40%;
+    height: 130px;
+    margin-bottom: 50px;
+    color: rgb(255, 255, 255);
+    padding: 20px;
+    font-family: head;
+    font-size: larger;
+    text-align: center;
+}
+
+.answer {
+    font-family: text;
+    font-size: medium;
+    cursor: pointer;
+}
+
+.answer:hover {
+    background: var(--color-gold-gradient);
+}
+
+#questionImg {
+    position: absolute;
+    height: 140px;
+}

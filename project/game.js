@@ -201,4 +201,5 @@ function gameOver() {
     <h2>Überlebte Raketen: ${enemyCount - 1}</h2>
     <div id="restartButton" onclick="startGame()">Neustart</div>
     </div>`;
+    document.getElementById('körper').innerHTML += '<div id="back"><a href="../index.html">Back to Mainpage</a></div>';
 }
