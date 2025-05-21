@@ -1,3 +1,12 @@
+let collect = localStorage['collectables'] || '[]';
+collect = JSON.parse(collect);
+for (i = 0; i < collectables.length; i++) {
+    if (collect[i] == null) {
+        collect.push({status: "locked"});
+    } 
+} 
+localStorage['collectables'] = JSON.stringify(collect);
+
 
 let num = [
     '../inhalt/Bilder/suits/mk1.png',
@@ -5,7 +14,7 @@ let num = [
     '../inhalt/Bilder/suits/mk3.png',
     '../inhalt/Bilder/suits/mk4.png',
     '../inhalt/Bilder/suits/mk5.png'
- ]
+]
 
 let bild1 = document.getElementsByClassName("armor")[0]
 let bild2 = document.getElementsByClassName("armor")[1]

@@ -58,3 +58,70 @@ function checkAnswers() {
     }
     alert("Du hast " + correctAnswers + " von 4" + " Fragen richtig beantwortet.");
 }
+
+let collectShown = false;
+function showCollectables() {
+    if (!collectShown) {
+      let tempstring = "";
+    for (i = 0; i < collectables.length; i++) {
+        if (collect[i].status == "unlocked") {
+            tempstring += `
+                <div id="collectable" class="collBox" onclick="showCollectInfo(${collectables[i].id})">
+                    <img src="${collectables[i].img}" alt="collectable${collectables[i].id}">
+                </div>
+            `
+        } else {
+            tempstring += `
+                <div id="collectable" class="collBox" onclick="showCollectInfo(${collectables[i].id})">
+                    <img src="../inhalt/Bilder/collect/not_found.png" alt="collectable${collectables[i].id}">
+                </div>
+            `
+        }
+    }
+        document.getElementById("quiz").style.display = 'none';
+        document.getElementById("check").style.display = 'none';
+        document.getElementById("collectables").innerHTML = tempstring;  
+
+        for (i = 0; i < collectables.length; i++) {
+            if (collectables[i].rarity == "rare") {
+               document.getElementsByClassName("collBox")[i].style = 'border: solid 5px rgb(101, 117, 2); border-radius: 5px;' 
+            }
+            if (collectables[i].rarity == "common") {
+               document.getElementsByClassName("collBox")[i].style = 'border: solid 5px rgb(255, 255, 255); border-radius: 5px;' 
+            }
+            if (collectables[i].rarity == "uncommon") {
+               document.getElementsByClassName("collBox")[i].style = 'border: solid 5px rgb(8, 166, 205); border-radius: 5px;' 
+            }
+        }
+        collectShown = true;
+    } else {
+        document.getElementById("quiz").style.display = 'block';
+        document.getElementById("check").style.display = 'block';
+        document.getElementById("collectables").innerHTML = '';
+        collectShown = false;
+    }
+    
+}
+
+let isCollectImg = true;
+function showCollectInfo(id) {
+    if (collect[id].status == "unlocked") {
+       let tempstring = "";
+    if (isCollectImg) {
+        tempstring += `
+            <div id="collectName"><h2>${collectables[id].name}</h2></div>
+            <div id="collectDescription"><p>${collectables[id].description}</p></div>
+        `
+
+        document.getElementById("collectable").innerHTML = tempstring;
+        isCollectImg = false;
+    } else {
+        tempstring += `
+            <img src="${collectables[id].img}" alt="collectable${collectables[id].id}"></img>
+        `
+
+        document.getElementById("collectable").innerHTML = tempstring;
+        isCollectImg = true;
+    } 
+    }
+}
