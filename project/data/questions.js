@@ -25,7 +25,7 @@ let questions = [
         "solution": "answer2",
     },
     {
-        "titel": "Wie heisst der Fater von Tony Stark?",
+        "titel": "Wie heisst der Vater von Tony Stark?",
         "answer1": "Howard Stark",
         "answer2": "Howard Potts",
         "answer3": "Henric Stark",
