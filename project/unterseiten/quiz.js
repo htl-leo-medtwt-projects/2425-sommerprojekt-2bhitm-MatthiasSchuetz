@@ -92,6 +92,15 @@ function showCollectables() {
             if (collectables[i].rarity == "uncommon") {
                document.getElementsByClassName("collBox")[i].style = 'border: solid 5px rgb(8, 166, 205); border-radius: 5px;' 
             }
+            if (collectables[i].rarity == "legendary") {
+               document.getElementsByClassName("collBox")[i].style = 'border: solid 5px rgb(228, 158, 0); border-radius: 5px;' 
+            }
+            if (collectables[i].rarity == "mythic") {
+               document.getElementsByClassName("collBox")[i].style = 'border: solid 5px rgb(195, 0, 0); border-radius: 5px;' 
+            }
+            if (collectables[i].rarity == "epic") {
+               document.getElementsByClassName("collBox")[i].style = 'border: solid 5px rgb(187, 34, 185); border-radius: 5px;' 
+            }
         }
         collectShown = true;
     } else {
@@ -113,14 +122,14 @@ function showCollectInfo(id) {
             <div id="collectDescription"><p>${collectables[id].description}</p></div>
         `
 
-        document.getElementById("collectable").innerHTML = tempstring;
+        document.getElementsByClassName("collBox")[id].innerHTML = tempstring;
         isCollectImg = false;
     } else {
         tempstring += `
             <img src="${collectables[id].img}" alt="collectable${collectables[id].id}"></img>
         `
 
-        document.getElementById("collectable").innerHTML = tempstring;
+        document.getElementsByClassName("collBox")[id].innerHTML = tempstring;
         isCollectImg = true;
     } 
     }

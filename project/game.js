@@ -20,7 +20,28 @@ function startGame() {
     gameLoop();
 }
 
+let rulesOpened = false;
+function showRules() {
+    let tempstring = "";
+    if (!rulesOpened) {
+      document.getElementById('rules').style.display = 'block';
+      document.getElementById('gameNavigation').style.display = 'none';
 
+    tempstring = `<h2>Regeln:</h2><br>
+                    <p>Weiche den Raketen und Flugzeugen mit Ironman aus. Wirst du getroffen bedeutet das "Game Over!"</p>
+                    <h2>Steuerung:</h2><br>
+                    <p>Bewege Ironman mit den Pfeiltasten auf und ab.</<p>
+                    <div id="closeRules" onclick="showRules()">Close</div>
+                    `
+
+        document.getElementById('rules').innerHTML = tempstring;  
+        rulesOpened = true;
+    } else {
+        document.getElementById('rules').style.display = 'none';
+        document.getElementById('gameNavigation').style.display = 'block';
+        rulesOpened = false;
+    }
+}
 
 
 let KEY_EVENTS = {
