@@ -3,6 +3,7 @@ let enemySpawnInterval = 1000;
 let enemyIsSpawning = false;
 let enemyCount = 0;
 let enemyAlive = false;
+let enemySpeed = 1.8;
 
 function startGame() {
     document.getElementById('körper').innerHTML = '';
@@ -17,6 +18,7 @@ function startGame() {
     enemySpawnInterval = 1000;
     enemyIsSpawning = false;
     gameIsRunning = true;
+    enemySpeed = 1.8;
     gameLoop();
 }
 
@@ -121,7 +123,6 @@ function movePlayer(y) {
     }
 }
 
-
 function spawnEnemys() {
     let rndSpawnHeight = (Math.random() * 500) - 100;
 
@@ -154,15 +155,17 @@ function spawnEnemys() {
             gsap.to(element[i], {
                 x: "-265%",
                 opacity: 1,
-                duration: 1.8,
+                duration: enemySpeed,
                 ease: 'linear',
                 onComplete: () => element[i].style.display = 'none',
                 onComplete: () => enemyAlive = false,
+                onComplete: () => {if (enemySpeed > 0.6) {enemySpeed -= 0.1}},
                 scrollTrigger: {
                     trigger: element[i],
                     start: '50% 120%'
                 }
             });
+
     }
 
     enemyCount++;
