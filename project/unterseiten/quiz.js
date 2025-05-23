@@ -2,7 +2,7 @@ function showQuiz() {
     let usedQuestions = [];
     let answerNumber = 1;
 
-    while (usedQuestions.length < 4) {
+    while (usedQuestions.length < 5) {
         let questionNum = Math.floor(Math.random() * questions.length);
         if (!usedQuestions.includes(questionNum)) {
             usedQuestions.push(questionNum);
@@ -56,7 +56,7 @@ function checkAnswers() {
             correctAnswers++;
         }
     }
-    alert("Du hast " + correctAnswers + " von 4" + " Fragen richtig beantwortet.");
+    alert("Du hast " + correctAnswers + " von 5" + " Fragen richtig beantwortet.");
 }
 
 let collectShown = false;
