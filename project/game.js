@@ -26,17 +26,17 @@ let rulesOpened = false;
 function showRules() {
     let tempstring = "";
     if (!rulesOpened) {
-      document.getElementById('rules').style.display = 'block';
-      document.getElementById('gameNavigation').style.display = 'none';
+        document.getElementById('rules').style.display = 'block';
+        document.getElementById('gameNavigation').style.display = 'none';
 
-    tempstring = `<h2>Regeln:</h2><br>
+        tempstring = `<h2>Regeln:</h2><br>
                     <p>Weiche den Raketen und Flugzeugen mit Ironman aus. Wirst du getroffen bedeutet das "Game Over!"</p>
                     <h2>Steuerung:</h2><br>
                     <p>Bewege Ironman mit den Pfeiltasten auf und ab.</<p>
                     <div id="closeRules" onclick="showRules()">Close</div>
                     `
 
-        document.getElementById('rules').innerHTML = tempstring;  
+        document.getElementById('rules').innerHTML = tempstring;
         rulesOpened = true;
     } else {
         document.getElementById('rules').style.display = 'none';
@@ -83,28 +83,28 @@ function gameLoop() {
     }
 
     if (enemyAlive) {
-      let playerItemCollide = false;
-      console.log(enemyCount);
-      playerItemCollide = isColliding(document.getElementById('player'), document.getElementsByClassName(`enemy`)[enemyCount - 1]);
+        let playerItemCollide = false;
+        console.log(enemyCount);
+        playerItemCollide = isColliding(document.getElementById('player'), document.getElementsByClassName(`enemy`)[enemyCount - 1]);
 
-    if (playerItemCollide) {
-        console.log('collide')
-        playerItemCollide = false;
-        gameOver();
-    }  
+        if (playerItemCollide) {
+            console.log('collide')
+            playerItemCollide = false;
+            gameOver();
+        }
     }
 
-    
+
     if (enemyIsSpawning == false) {
         enemyIsSpawning = true;
-    setTimeout(function() {
-        if (gameIsRunning) {
-        spawnEnemys();
-        }
-    }, enemySpawnInterval);
+        setTimeout(function () {
+            if (gameIsRunning) {
+                spawnEnemys();
+            }
+        }, enemySpawnInterval);
     }
-    
-    
+
+
     if (gameIsRunning) {
         setTimeout(gameLoop, 50);
     }
@@ -113,7 +113,7 @@ function gameLoop() {
 
 function movePlayer(y) {
     if (document.getElementById('player').offsetTop >= 52 && document.getElementById('player').offsetTop <= 435) {
-       document.getElementById('player').style.top = (document.getElementById('player').offsetTop - (y * 15)) + 'px';
+        document.getElementById('player').style.top = (document.getElementById('player').offsetTop - (y * 15)) + 'px';
     } else {
         if (document.getElementById('player').offsetTop <= 52) {
             document.getElementById('player').style.top = (document.getElementById('player').offsetTop + 5) + 'px';
@@ -134,37 +134,37 @@ function spawnEnemys() {
     enemyAlive = true;
 
     gsap.registerPlugin(ScrollTrigger);
-    
-    window.onload = ()=>{
+
+    window.onload = () => {
         document.querySelector('body').style.opacity = 1;
     }
-    
+
     let sections = document.querySelectorAll('.enemy');
     generateScrollAnimation(sections.length - 1);
     console.log(sections.length - 1)
-    
-    
-    function generateScrollAnimation(i){
-    let element = [];
-    element[i] = sections[i];
-    
+
+
+    function generateScrollAnimation(i) {
+        let element = [];
+        element[i] = sections[i];
+
         gsap.set(element[i], {
             x: '0%',
         });
-        
-            gsap.to(element[i], {
-                x: "-265%",
-                opacity: 1,
-                duration: enemySpeed,
-                ease: 'linear',
-                onComplete: () => element[i].style.display = 'none',
-                onComplete: () => enemyAlive = false,
-                onComplete: () => {if (enemySpeed > 0.6) {enemySpeed -= 0.1}},
-                scrollTrigger: {
-                    trigger: element[i],
-                    start: '50% 120%'
-                }
-            });
+
+        gsap.to(element[i], {
+            x: "-265%",
+            opacity: 1,
+            duration: enemySpeed,
+            ease: 'linear',
+            onComplete: () => element[i].style.display = 'none',
+            onComplete: () => enemyAlive = false,
+            onComplete: () => { if (enemySpeed > 0.6) { enemySpeed -= 0.1 } },
+            scrollTrigger: {
+                trigger: element[i],
+                start: '50% 120%'
+            }
+        });
 
     }
 
@@ -190,8 +190,8 @@ function isColliding(div1, div2) {
 
     //Chat-Gpt
     if (matrix !== 'none') {
-    const values = matrix.match(/matrix.*\((.+)\)/)[1].split(', ');
-    const translateX = parseFloat(values[4]);
+        const values = matrix.match(/matrix.*\((.+)\)/)[1].split(', ');
+        const translateX = parseFloat(values[4]);
         top2 = div2.offsetTop + 180;
         front2 = translateX;
         bottom2 = div2.offsetTop + div2.offsetHeight - 180;
@@ -202,8 +202,8 @@ function isColliding(div1, div2) {
     }
 
     if (front2 < -window.innerWidth + 500) {
-            div2.style.display = 'none';
-            enemyAlive = false;
+        div2.style.display = 'none';
+        enemyAlive = false;
     }
 
     return (front1 > (window.innerWidth - 250 + front2) && top1 < bottom2 && bottom1 > top2 && (window.innerWidth - 250 + front2) > front1 - div1.offsetWidth);

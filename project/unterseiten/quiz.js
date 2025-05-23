@@ -32,7 +32,7 @@ let answers = [];
 
 function safeAnswer(answer, questionNumber, id, num) {
     let startingNumber = 1;
-    
+
     if (answers[questionNumber] != null) {
         switch (num) {
             case 1: startingNumber = id; break;
@@ -62,44 +62,44 @@ function checkAnswers() {
 let collectShown = false;
 function showCollectables() {
     if (!collectShown) {
-      let tempstring = "";
-    for (i = 0; i < collectables.length; i++) {
-        if (collect[i].status == "unlocked") {
-            tempstring += `
+        let tempstring = "";
+        for (i = 0; i < collectables.length; i++) {
+            if (collect[i].status == "unlocked") {
+                tempstring += `
                 <div id="collectable" class="collBox" onclick="showCollectInfo(${collectables[i].id})">
                     <img src="${collectables[i].img}" alt="collectable${collectables[i].id}">
                 </div>
             `
-        } else {
-            tempstring += `
+            } else {
+                tempstring += `
                 <div id="collectable" class="collBox" onclick="showCollectInfo(${collectables[i].id})">
                     <img src="../inhalt/Bilder/collect/not_found.png" alt="collectable${collectables[i].id}">
                 </div>
             `
+            }
         }
-    }
         document.getElementById("quiz").style.display = 'none';
         document.getElementById("check").style.display = 'none';
-        document.getElementById("collectables").innerHTML = tempstring;  
+        document.getElementById("collectables").innerHTML = tempstring;
 
         for (i = 0; i < collectables.length; i++) {
             if (collectables[i].rarity == "rare") {
-               document.getElementsByClassName("collBox")[i].style = 'border: solid 5px rgb(22, 196, 239); border-radius: 5px;' 
+                document.getElementsByClassName("collBox")[i].style = 'border: solid 5px rgb(22, 196, 239); border-radius: 5px;'
             }
             if (collectables[i].rarity == "common") {
-               document.getElementsByClassName("collBox")[i].style = 'border: solid 5px rgb(255, 255, 255); border-radius: 5px;' 
+                document.getElementsByClassName("collBox")[i].style = 'border: solid 5px rgb(255, 255, 255); border-radius: 5px;'
             }
             if (collectables[i].rarity == "uncommon") {
-               document.getElementsByClassName("collBox")[i].style = 'border: solid 5px rgb(101, 117, 2); border-radius: 5px;' 
+                document.getElementsByClassName("collBox")[i].style = 'border: solid 5px rgb(101, 117, 2); border-radius: 5px;'
             }
             if (collectables[i].rarity == "legendary") {
-               document.getElementsByClassName("collBox")[i].style = 'border: solid 5px rgb(228, 158, 0); border-radius: 5px;' 
+                document.getElementsByClassName("collBox")[i].style = 'border: solid 5px rgb(228, 158, 0); border-radius: 5px;'
             }
             if (collectables[i].rarity == "mythic") {
-               document.getElementsByClassName("collBox")[i].style = 'border: solid 5px rgb(195, 0, 0); border-radius: 5px;' 
+                document.getElementsByClassName("collBox")[i].style = 'border: solid 5px rgb(195, 0, 0); border-radius: 5px;'
             }
             if (collectables[i].rarity == "epic") {
-               document.getElementsByClassName("collBox")[i].style = 'border: solid 5px rgb(187, 34, 185); border-radius: 5px;' 
+                document.getElementsByClassName("collBox")[i].style = 'border: solid 5px rgb(187, 34, 185); border-radius: 5px;'
             }
         }
         collectShown = true;
@@ -109,28 +109,28 @@ function showCollectables() {
         document.getElementById("collectables").innerHTML = '';
         collectShown = false;
     }
-    
+
 }
 
 let isCollectImg = true;
 function showCollectInfo(id) {
     if (collect[id].status == "unlocked") {
-       let tempstring = "";
-    if (isCollectImg) {
-        tempstring += `
+        let tempstring = "";
+        if (isCollectImg) {
+            tempstring += `
             <div id="collectName"><h2>${collectables[id].name}</h2></div>
             <div id="collectDescription"><p>${collectables[id].description}</p></div>
         `
 
-        document.getElementsByClassName("collBox")[id].innerHTML = tempstring;
-        isCollectImg = false;
-    } else {
-        tempstring += `
+            document.getElementsByClassName("collBox")[id].innerHTML = tempstring;
+            isCollectImg = false;
+        } else {
+            tempstring += `
             <img src="${collectables[id].img}" alt="collectable${collectables[id].id}"></img>
         `
 
-        document.getElementsByClassName("collBox")[id].innerHTML = tempstring;
-        isCollectImg = true;
-    } 
+            document.getElementsByClassName("collBox")[id].innerHTML = tempstring;
+            isCollectImg = true;
+        }
     }
 }
