@@ -236,10 +236,8 @@ function closeSuitInfo() {
 
 /*Gsap Scroll Animationen*/
 scrollAnimation();
-
 function scrollAnimation() {
     gsap.registerPlugin(ScrollTrigger);
-    
     
     window.onload = ()=>{
         document.querySelector('body').style.opacity = 1;
