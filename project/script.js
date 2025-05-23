@@ -5,9 +5,7 @@ for (i = 0; i < collectables.length; i++) {
         collect.push({status: "locked"});
     } 
 }
-collect[3] = {status: "unlocked"};
 localStorage['collectables'] = JSON.stringify(collect);
-
 
 let num = [
     '../inhalt/Bilder/suits/mk1.png',
