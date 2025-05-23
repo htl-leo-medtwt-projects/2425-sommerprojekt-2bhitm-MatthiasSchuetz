@@ -84,13 +84,13 @@ function showCollectables() {
 
         for (i = 0; i < collectables.length; i++) {
             if (collectables[i].rarity == "rare") {
-               document.getElementsByClassName("collBox")[i].style = 'border: solid 5px rgb(101, 117, 2); border-radius: 5px;' 
+               document.getElementsByClassName("collBox")[i].style = 'border: solid 5px rgb(22, 196, 239); border-radius: 5px;' 
             }
             if (collectables[i].rarity == "common") {
                document.getElementsByClassName("collBox")[i].style = 'border: solid 5px rgb(255, 255, 255); border-radius: 5px;' 
             }
             if (collectables[i].rarity == "uncommon") {
-               document.getElementsByClassName("collBox")[i].style = 'border: solid 5px rgb(8, 166, 205); border-radius: 5px;' 
+               document.getElementsByClassName("collBox")[i].style = 'border: solid 5px rgb(101, 117, 2); border-radius: 5px;' 
             }
             if (collectables[i].rarity == "legendary") {
                document.getElementsByClassName("collBox")[i].style = 'border: solid 5px rgb(228, 158, 0); border-radius: 5px;' 
