@@ -121,7 +121,7 @@ let questions = [
         "solution": "answer2",
     },
     {
-        "titel": "Wie viele Anzuege zerstört Tony am Ende von Ironman 3?",
+        "titel": "Wie viele Anzuege zerstoert Tony am Ende von Ironman 3?",
         "answer1": "13",
         "answer2": "25",
         "answer3": "35",

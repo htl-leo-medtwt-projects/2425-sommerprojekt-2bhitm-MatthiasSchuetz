@@ -30,9 +30,9 @@ function showRules() {
         document.getElementById('gameNavigation').style.display = 'none';
 
         tempstring = `<h2>Regeln:</h2><br>
-                    <p>Weiche den Raketen und Flugzeugen mit Ironman aus. Wirst du getroffen bedeutet das "Game Over!"</p>
+                    <p>Weiche den Raketen mit Ironman aus. Wirst du getroffen bedeutet das "Game Over!"</p>
                     <h2>Steuerung:</h2><br>
-                    <p>Bewege Ironman mit den Pfeiltasten auf und ab.</<p>
+                    <p>Bewege Ironman mit den Pfeiltasten oder "W" und "S" auf und ab.</<p>
                     <div id="closeRules" onclick="showRules()">Close</div>
                     `
 
@@ -222,8 +222,10 @@ function gameOver() {
 
     document.getElementById('gameContent').innerHTML = `<div id="gameOver">
     <h1>Game Over</h1>
+    <div id="gameOverInfo">
     <h2>Überlebte Raketen: ${enemyCount - 1}</h2>
     <div id="restartButton" onclick="startGame()">Neustart</div>
+    </div>
     </div>`;
     document.getElementById('körper').innerHTML += '<div id="back"><a href="../index.html">Back to Mainpage</a></div>';
 }
