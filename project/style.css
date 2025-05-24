@@ -668,6 +668,24 @@ h1:hover {
 ---------------------
 */
 
+#showCollect {
+    position: fixed;
+    left: 91.5%;
+    cursor: pointer;
+    top: 85%;
+    transition: all 0.3s ease-in-out;
+}
+
+#showCollect:hover {
+    scale: 1.13;
+}
+
+#showCollect>img {
+    border-radius: 100%;
+    width: 60px;
+    border: solid 3px #540202;
+}
+
 #collectable>img {
     width: 300px;
     height: 300px;
