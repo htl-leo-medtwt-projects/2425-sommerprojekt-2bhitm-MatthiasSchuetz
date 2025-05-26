@@ -86,7 +86,7 @@ let collectables = [
     {
         "name": "Morgan's Cheeseburger",
         "description": "Ein liebevolles Symbol aus 'Endgame': Morgan Stark liebt Cheeseburger – genau wie ihr Vater. Dieses Collectable ist eine Hommage an Tony’s erste Mahlzeit nach seiner Rettung in Iron Man 1.",
-        "img": "../inhalt/Bilder/collect/cheeseburger.png",
+        "img": "../inhalt/Bilder/collect/cheesburger.png",
         "id": "12",
         "rarity": "legendary"
     }
