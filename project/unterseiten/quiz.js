@@ -62,6 +62,7 @@ function checkAnswers() {
 
 let collectShown = false;
 function showCollectables() {
+    window.scrollTo(0, 0);
     if (!collectShown) {
         let tempstring = "";
         for (i = 0; i < collectables.length; i++) {
@@ -215,7 +216,7 @@ function triggerUnlockAni(id) {
             <div id="showCollectable" class="collBox" onclick="showCollectInfo(${collectables[id].id})">
                     <img src="${collectables[id].img}" alt="collectable${collectables[id].id}">
             </div>
-            <div id="closeCollect" onclick="document.getElementById('getCollectable').style.display = 'none';">
+            <div id="closeCollect" onclick="reload()">
                 Schliessen
             </div>`;
             if (collectables[id].rarity == "rare") {
@@ -237,4 +238,8 @@ function triggerUnlockAni(id) {
                 document.getElementById("showCollectable").style = 'border: solid 5px rgb(187, 34, 185); border-radius: 5px;'
             }
     }, 1000);
+}
+
+function reload() {
+    window.location.reload();
 }
