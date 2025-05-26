@@ -228,4 +228,109 @@ function gameOver() {
     </div>
     </div>`;
     document.getElementById('körper').innerHTML += '<div id="back"><a href="../index.html">Back to Mainpage</a></div>';
+
+    getCollect(enemyCount - 1);
+}
+
+
+function getCollect(rarityMultiplier) {
+    if (rarityMultiplier >= 3) {
+    document.getElementById("getCollectable").style.display = 'block';
+    let tempstring = "";
+    let id = 0;
+
+    id = Math.floor(Math.random() * 1000000);
+    id = id + (rarityMultiplier * 10000);
+
+    if (id > 1000000) {
+        id = 1000000;
+    }
+    
+    console.log(id);
+
+    let rarity = "";
+    if (id < 700000) {
+        rarity = "common";
+    } else if (id < 850000) {
+        rarity = "uncommon";
+    } else if (id < 950000) {
+        rarity = "rare";
+    } else if (id < 980000) {
+        rarity = "epic";
+    } else if (id < 1000000) {
+        rarity = "mythic";
+    } else if (id == 1000000) {
+        rarity = "legendary";
+    }
+    console.log(rarity);
+
+    
+    let startRarity = 0;
+    let endRarity = 0;
+    let i = 0;
+    while (collectables[i].rarity != rarity) {
+        i++;
+    }
+    startRarity = i;
+    while (collectables[i].rarity == rarity) {
+        i++;
+        if (i >= collectables.length) {
+            break;
+        }
+    }
+    endRarity = i - 1;
+    id = Math.floor(Math.random() * (endRarity - startRarity + 1)) + startRarity;
+
+
+    tempstring += `
+        <div><h2>Du hast ein neues Sammelstueck freigeschaltet!</h2></div>
+        <div id="collectAni" onclick="triggerUnlockAni(${id})"><img src="../inhalt/Bilder/collect/not_found.png" alt=""></div>
+    `
+
+    document.getElementById("getCollectable").innerHTML = tempstring;
+    }
+}
+
+function triggerUnlockAni(id) {
+    let tempstring = "";
+    //auf Animationsende warten
+    if (collect[id].status == "unlocked") {
+        tempstring = "Duplikat :(";
+        console.log(collect)
+    } else {
+        tempstring = "Neu!";
+    }
+    collect[id] = { status: "unlocked" };
+    localStorage['collectables'] = JSON.stringify(collect);
+
+    setTimeout(() => {
+        document.getElementById("getCollectable").innerHTML = `
+            <div><h2>Du hast ein neues Sammelstueck freigeschaltet!</h2></div>
+            <div id="collectMessage">${tempstring}</div>
+            <div id="showCollectName"><h2>${collectables[id].name}</h2></div>
+            <div id="showCollectable" class="collBox" onclick="showCollectInfo(${collectables[id].id})">
+                    <img src="${collectables[id].img}" alt="collectable${collectables[id].id}">
+            </div>
+            <div id="closeCollect" onclick="document.getElementById('getCollectable').style.display = 'none';">
+                Schliessen
+            </div>`;
+            if (collectables[id].rarity == "rare") {
+                document.getElementById("showCollectable").style = 'border: solid 5px rgb(22, 196, 239); border-radius: 5px;'
+            }
+            if (collectables[id].rarity == "common") {
+                document.getElementById("showCollectable").style = 'border: solid 5px rgb(255, 255, 255); border-radius: 5px;'
+            }
+            if (collectables[id].rarity == "uncommon") {
+                document.getElementById("showCollectable").style = 'border: solid 5px rgb(101, 117, 2); border-radius: 5px;'
+            }
+            if (collectables[id].rarity == "legendary") {
+                document.getElementById("showCollectable").style = 'border: solid 5px rgb(228, 158, 0); border-radius: 5px;'
+            }
+            if (collectables[id].rarity == "mythic") {
+                document.getElementById("showCollectable").style = 'border: solid 5px rgb(195, 0, 0); border-radius: 5px;'
+            }
+            if (collectables[id].rarity == "epic") {
+                document.getElementById("showCollectable").style = 'border: solid 5px rgb(187, 34, 185); border-radius: 5px;'
+            }
+    }, 1000);
 }

@@ -138,6 +138,7 @@ function showCollectInfo(id) {
 
 
 function getCollect(rarityMultiplier) {
+    if (rarityMultiplier != 0) {
     document.getElementById("getCollectable").style.display = 'block';
     let tempstring = "";
     let id = 0;
@@ -191,6 +192,7 @@ function getCollect(rarityMultiplier) {
     `
 
     document.getElementById("getCollectable").innerHTML = tempstring;
+    }
 }
 
 function triggerUnlockAni(id) {
