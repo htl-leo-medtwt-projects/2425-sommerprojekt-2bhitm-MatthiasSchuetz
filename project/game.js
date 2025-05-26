@@ -240,7 +240,7 @@ function getCollect(rarityMultiplier) {
     let id = 0;
 
     id = Math.floor(Math.random() * 1000000);
-    id = id + (rarityMultiplier * 10000);
+    id = id + (rarityMultiplier * 50000);
 
     if (id > 1000000) {
         id = 1000000;
