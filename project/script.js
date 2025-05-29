@@ -2,7 +2,7 @@ let collect = localStorage['collectables'] || '[]';
 collect = JSON.parse(collect);
 for (i = 0; i < collectables.length; i++) {
     if (collect[i] == null) {
-        collect.push({ status: "locked" });
+        collect.push({ status: "unlocked" });
     }
 }
 localStorage['collectables'] = JSON.stringify(collect);

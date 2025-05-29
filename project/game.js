@@ -4,13 +4,54 @@ let enemyIsSpawning = false;
 let enemyCount = 0;
 let enemyAlive = false;
 let enemySpeed = 1.8;
+let currentSuit = 0;
 
-function startGame() {
+
+function showSuitSelector() {
+    document.getElementById('körper').innerHTML = '';
+    document.getElementById('körper').innerHTML = `<div id="suitSelector">
+            <h2>Whäle deinen Anzug:</h2>
+            <div id="suitInput"><input type="text" placeholder="mk1" id="suitName" onchange="selectSuit(this)"></div>
+            <div id="suitShown">
+            <h2>Aktueller Anzug: mk1</h2>
+            <img src="../inhalt/Bilder/suits/mk1.png" alt="mk1">
+            </div>
+        </div>`;
+}
+
+function selectSuit(suit) {
+    let suitNum = 0;
+    let theSuit;
+    for (let i = 0; i < suits.length; i++) {
+        if (suits[i].name.toLowerCase().includes(suit.value.toLowerCase())) {
+            console.log(i)
+            theSuit = i;
+            document.getElementById('suitShown').innerHTML = `<h2>Aktueller Anzug: ${suits[i].name}</h2>
+            <img src="${suits[i].img}" alt="${suits[i].name}">`;
+            break;
+        }
+        suitNum++;
+    }
+    if (suitNum == suits.length) {
+        document.getElementById('suitShown').innerHTML = `<h2>Aktueller Anzug: ${suit.value} is not a Suit</h2>`;
+    }
+    
+    console.log(suit.value);
+
+    console.log(suits[theSuit].img)
+    startGame(theSuit);
+}
+
+function startGame(suit) {
+    if (suit != null) {
+        currentSuit = suit;
+    }
+    
     document.getElementById('körper').innerHTML = '';
     document.getElementById('körper').innerHTML = `<img id="gameBackgound" src="../inhalt/Bilder/background.gif" alt=""></img>`;
 
     document.getElementById('körper').innerHTML += `<div id="gameContent"></div>`
-    document.getElementById('körper').innerHTML += `<div id="player"><img src="../inhalt/Bilder/suits/mk1.png" alt="mk1"></div>`
+    document.getElementById('körper').innerHTML += `<div id="player"><img src="${suits[currentSuit].img}" alt="${suits[currentSuit].name}"></div>`
 
 
     enemyCount = 0;
