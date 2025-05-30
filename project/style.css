@@ -526,6 +526,76 @@ h1:hover {
     z-index: -1;
 }
 
+#suitSelector {
+    margin-left: auto;
+    margin-right: auto;
+    display: grid;
+    grid-template-rows: auto auto auto;
+    width: 21.5%;
+    text-align: center;
+    border: solid 5px black;
+    border-radius: 15px;
+    margin-top: 10px;
+}
+
+#suitSelector>div>h2 {
+    font-family: head;
+    font-size: 35px;
+    background: var(--color-gold-gradient);
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    width: 300px;
+    border-radius: 15px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: -0.1%;
+}
+
+#suitSelector>div {
+    border: solid 4px black;
+}
+
+#suitShown>img {
+    width: 70%;
+}
+
+#suitInput>input {
+    width: 60%;
+    border-radius: 5px;
+    border: solid 4px black;
+    text-align: center;
+    background-color: var(--color-background);
+    font-family: text;
+    color: rgb(255, 207, 207);
+}
+
+
+#suitInputContainer {
+    border: solid 4px black;
+    padding-bottom: 20px;
+}
+
+#startGameButton {
+    scale: 1.2;
+    margin-top: 4%;
+    margin-bottom: 4%;
+    user-select: none;
+    font-family: head;
+    background: var(--color-gold-gradient);
+    color: #540202;
+    width: 230px;
+    border-radius: 15px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    transition: all 0.5s ease-in-out;
+    background-size: 200%;
+    cursor: pointer;
+}
+#startGameButton:hover {
+    background-position-x: -200px;
+}
+
 /*Game*/
 
 #gameBackgound {

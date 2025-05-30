@@ -10,12 +10,16 @@ let currentSuit = 0;
 function showSuitSelector() {
     document.getElementById('körper').innerHTML = '';
     document.getElementById('körper').innerHTML = `<div id="suitSelector">
-            <h2>Whäle deinen Anzug:</h2>
-            <div id="suitInput"><input type="text" placeholder="mk1" id="suitName" onchange="selectSuit(this)"></div>
+            <div id="suitInputContainer">
+                <h2>Waehle deinen Anzug:</h2>
+                <div id="suitInput"><input type="text" placeholder="mk1" id="suitName" onchange="selectSuit(this)"></div>
+            </div>
             <div id="suitShown">
             <h2>Aktueller Anzug: mk1</h2>
             <img src="../inhalt/Bilder/suits/mk1.png" alt="mk1">
+            <div id="startGameButton" onclick="startGame(${currentSuit});">Start</div>
             </div>
+            
         </div>`;
 }
 
@@ -27,7 +31,8 @@ function selectSuit(suit) {
             console.log(i)
             theSuit = i;
             document.getElementById('suitShown').innerHTML = `<h2>Aktueller Anzug: ${suits[i].name}</h2>
-            <img src="${suits[i].img}" alt="${suits[i].name}">`;
+            <img src="${suits[i].img}" alt="${suits[i].name}">
+            <div id="startGameButton" onclick="startGame(${currentSuit});">Start</div>`;
             break;
         }
         suitNum++;
@@ -39,14 +44,13 @@ function selectSuit(suit) {
     console.log(suit.value);
 
     console.log(suits[theSuit].img)
-    startGame(theSuit);
+
+    if (suit != null) {
+        currentSuit = theSuit;
+    }
 }
 
-function startGame(suit) {
-    if (suit != null) {
-        currentSuit = suit;
-    }
-    
+function startGame() {
     document.getElementById('körper').innerHTML = '';
     document.getElementById('körper').innerHTML = `<img id="gameBackgound" src="../inhalt/Bilder/background.gif" alt=""></img>`;
 
