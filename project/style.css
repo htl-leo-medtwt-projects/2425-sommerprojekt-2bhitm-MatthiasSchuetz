@@ -691,7 +691,7 @@ h1:hover {
     width: 40%;
     height: 130px;
     margin-bottom: 50px;
-    color: rgb(255, 255, 255);
+    color: rgb(255, 207, 207);
     padding: 20px;
     font-family: head;
     font-size: larger;
@@ -920,4 +920,110 @@ h1:hover {
     border: solid 4px black;
     padding: 5px;
     z-index: 2;
+}
+
+
+/*Filme-Unterseite
+---------------------
+*/
+
+.movieLeft {
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 37px;
+    border: 1px solid #C89999;
+    background: linear-gradient(270deg, rgba(0, 0, 0, 0.89) 48.84%, rgba(119, 37, 37, 0.64) 104.14%);
+    box-shadow: 14px 14px 4px 0px rgba(82, 33, 33, 0.41);
+    display: grid;
+    grid-template-rows: auto auto;
+    width: 70%;
+    height: 350px;
+    margin-bottom: 50px;
+}
+
+.movieLeft>p {
+    padding-left: 1%;
+    color: rgb(255, 207, 207);
+    font-family: text;
+    width: 45%;
+}
+
+.movieLeft>ul>li {
+    padding-left: 1%;
+    color: rgb(255, 207, 207);
+    font-family: text;
+    width: 45%;
+}
+
+.movieLeft>h2 {
+    font-family: head;
+    font-size: 50px;
+    background: var(--color-gold-gradient);
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    width: 45%;
+    border-radius: 15px;
+    padding-left: 1%;
+    margin-bottom: 0px;
+    margin-top: 0px;
+}
+
+.movieLeft>img {
+    height: 100%;
+    position: absolute;
+    right: 4%;
+}
+
+.movieRight {
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 37px;
+    border: 1px solid #C89999;
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0.89) 51.17%, rgba(119, 37, 37, 0.64) 100%);
+    box-shadow: -14px 14px 4px 0px rgba(82, 33, 33, 0.41);
+    display: grid;
+    grid-template-rows: auto auto;
+    width: 70%;
+    height: 350px;
+    margin-bottom: 50px;
+}
+
+.movieRight>p {
+    color: rgb(255, 207, 207);
+    font-family: text;
+    width: 45%;
+    text-align: right;
+    position: relative;
+    right: -54%;
+}
+
+.movieRight>ul>li {
+    padding-left: 1%;
+    color: rgb(255, 207, 207);
+    font-family: text;
+    width: 45%;
+    text-align: right;
+    position: relative;
+    right: -53%;
+}
+
+.movieRight>h2 {
+    font-family: head;
+    font-size: 50px;
+    background: var(--color-gold-gradient);
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    width: 50%;
+    border-radius: 15px;
+    margin-bottom: 0px;
+    margin-top: 0px;
+    text-align: right;
+    position: relative;
+    right: -49%;
+}
+
+.movieRight>img {
+    height: 100%;
+    position: absolute;
+    left: 4%;
 }
