@@ -923,7 +923,7 @@ h1:hover {
 }
 
 
-/*Filme-Unterseite
+/*Filme/Games-Unterseite
 ---------------------
 */
 
@@ -1026,4 +1026,64 @@ h1:hover {
     height: 100%;
     position: absolute;
     left: 4%;
+}
+
+
+/*Responsive Design
+---------------------
+*/
+
+@media (max-width: 1024px) {
+    #shownArmor {
+        top: 22%;
+    }
+
+    #infoSuits {
+        top: 25%;
+        left: 18.2%;
+        scale: 1.3;
+    }
+
+    #steckbriefInfo {
+        padding-top: 3%;
+        padding-left: 170px;
+        padding-right: 170px;
+    }
+
+    #steckbrief {
+        margin-bottom: 28%;
+    }
+
+    #showCollectName {
+        left: 27.5%;
+    }
+
+    .movieLeft>p {
+        scale: 0.9;
+        margin-top: -20px;
+    }
+
+    .movieLeft>ul {
+        scale: 0.9;
+        margin-top: -30px;
+    }
+
+    .movieRight>p {
+        scale: 0.9;
+        margin-top: -20px;
+    }
+
+    .movieRight>ul {
+        scale: 0.9;
+        margin-top: -30px;
+    }
+
+    #collectables {
+        grid-template-columns: auto auto;
+    }
+
+    #collectMessage {
+        left: 32%;
+        top: 15%;
+    }
 }
