@@ -1087,3 +1087,132 @@ h1:hover {
         top: 15%;
     }
 }
+
+@media (max-width: 412px) {
+    h1 {
+        scale: 0.7;
+    }
+
+    .navItem {
+        scale: 0.4;
+        
+    }
+
+    .animationItem {
+        margin-left: -60%;
+        margin-top: -20%;
+        margin-bottom: -30%;
+    }
+
+    #back {
+        scale: 0.7;
+        right: -5%;
+        top: 14%;
+    }
+
+    #armors {
+        margin-right: 4.5%;
+        margin-top: 20%;
+    }
+
+    #shownArmor {
+        top: 28%;
+        left: 24%;
+    }
+
+    #changeArmors {
+        left: 33%;
+        scale: 0.9;
+    }
+
+    #infoSuits {
+        scale: 0.5;
+        margin-left: -47%;
+    }
+
+    #steckbrief {
+        scale: 0.7;
+        margin-right: -35.8%;
+        margin-top: 22%;
+    }
+
+    #steckbriefInfo>ul {
+        font-size: 13px;
+    }
+
+    #collectables {
+        grid-template-columns: auto;
+    }
+
+    #showCollect {
+        left: 80%;
+        top: 80%;
+    }
+
+    #getCollectable>div {
+        scale: 0.7;
+    }
+
+    #collectMessage {
+        top: 27%;
+        left: 15%;
+    }
+
+    #showCollectName {
+        left: -3%;
+    }
+
+    .movieLeft {
+        margin-left: 15%;
+        margin-top: 0%;
+        margin-bottom: 10%;
+        scale: 0.5;
+    }
+
+    .movieLeft>img {
+        scale: 0.5;
+        margin-right: -20%;
+    }
+
+    .movieLeft>p {
+        font-size: 12px;
+        margin-top: 2px;
+    }
+
+    .movieLeft>ul {
+        font-size: 12px;
+    }
+
+    .movieLeft>h2 {
+        font-size: 30px;
+    }
+
+    .movieRight {
+        margin-left: 15%;
+        margin-top: 0%;
+        margin-bottom: 10%;
+        scale: 0.5;
+    }
+
+    .movieRight>img {
+        scale: 0.5;
+        margin-left: -20%;
+    }
+
+    .movieRight>p {
+        font-size: 12px;
+        margin-top: 2px;
+    }
+
+    .movieRight>ul {
+        font-size: 12px;
+    }
+
+    .movieRight>h2 {
+        font-size: 30px;
+    }
+
+    .question {
+        width: 70%;
+    }
+}
